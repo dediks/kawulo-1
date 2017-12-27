@@ -3,14 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	@section('title', 'Pembayaran')
+	@section('title', 'Nota')
 	@include('layouts.link')
 </head>
 <body>
 	<!-- grow -->
 	@section('grow')
 	<div class="container">
-		<h2>Pembayaran</h2>
+		<h2>Nota</h2>
 	</div>
 	@stop
 	<!-- grow -->
@@ -103,7 +103,7 @@
 
 
 		<div class="clearfix"></div>
-		<a class="order" href="#">Bayar</a>
+		<a class="order" href="/home/payment">Bayar</a>
 		<div class="total-item">
 			<h3>OPSI</h3>
 			<h4>KUPON</h4>

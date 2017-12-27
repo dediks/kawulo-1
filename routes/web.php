@@ -28,4 +28,5 @@ Route::get('/home/login', 'Pages\LoginController@index');
 Route::get('/home/products', 'Pages\ProductsController@index');
 Route::get('/home/register', 'Pages\RegisterController@index');
 Route::get('/home/single', 'Pages\SingleController@index');
+Route::get('/home/payment', 'Pages\PaymentController@index');
 /*Pages*/
