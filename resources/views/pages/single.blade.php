@@ -23,17 +23,17 @@
 					<div class="col-md-7 single-top">	
 						<div class="flexslider">
 							<ul class="slides">
-								<li data-thumb="{{url('images/si.jpg')}}">
-									<div class="thumb-image"> <img src="{{url('images/si.jpg')}}" data-imagezoom="true" class="img-responsive"> </div>
+								<li data-thumb="{{url('storage/'.$blogs->gambar)}}">
+									<div class="thumb-image"> <img src="{{url('storage/'.$blogs->gambar)}}" data-imagezoom="true" class="img-responsive"> </div>
 								</li>
-								<li data-thumb="{{url('images/si1.jpg')}}">
-									<div class="thumb-image"> <img src="{{url('images/si1.jpg')}}" data-imagezoom="true" class="img-responsive"> </div>
+								<li data-thumb="{{url('storage/'.$blogs->gambar)}}">
+									<div class="thumb-image"> <img src="{{url('storage/'.$blogs->gambar)}}" data-imagezoom="true" class="img-responsive"> </div>
 								</li>
-								<li data-thumb="{{url('images/si2.jpg')}}">
-									<div class="thumb-image"> <img src="{{url('images/si2.jpg')}}" data-imagezoom="true" class="img-responsive"> </div>
+								<li data-thumb="{{url('storage/'.$blogs->gambar)}}">
+									<div class="thumb-image"> <img src="{{url('storage/'.$blogs->gambar)}}" data-imagezoom="true" class="img-responsive"> </div>
 								</li> 
-								<li data-thumb="{{url('images/si3.jpg')}}">
-									<div class="thumb-image"> <img src="{{url('images/si3.jpg')}}" data-imagezoom="true" class="img-responsive"> </div>
+								<li data-thumb="{{url('storage/'.$blogs->gambar)}}">
+									<div class="thumb-image"> <img src="{{url('storage/'.$blogs->gambar)}}" data-imagezoom="true" class="img-responsive"> </div>
 								</li>
 							</ul>
 						</div>
@@ -57,20 +57,13 @@ $(window).load(function() {
 </div>	
 <div class="col-md-5 single-top-in simpleCart_shelfItem">
 	<div class="single-para ">
-		<h4>Lorem Ipsum</h4>
+		<h4>{{$blogs->nama_barang}}</h4>
 		<div class="star-on">
-
-			<div class="review">
-				<a href="#"> 1 customer review </a>
-
-			</div>
 			<div class="clearfix"> </div>
 		</div>
 
-		<h5 class="item_price">$ 500.00</h5>
-		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed 
-			diam nonummy nibh euismod tincidunt ut laoreet dolore 
-		magna aliquam erat </p>
+		<h5 class="item_price">Rp {{$blogs->harga}}</h5>
+		<p>{{$blogs->deskripsi}}</p>
 		<div class="available">
 			<ul>
 				<li>Color

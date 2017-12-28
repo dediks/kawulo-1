@@ -11,7 +11,8 @@ class HomeController extends Controller
     public function index()
     {
     	$items = Item::all();
-    	//dd($items);
-    	return view('pages/home',['items' => $items]);
+    	$coba = Item::find(1);
+    	// dd($coba);
+    	return view('pages/home',['items' => $items, 'coba' => $coba]);
     }
 }

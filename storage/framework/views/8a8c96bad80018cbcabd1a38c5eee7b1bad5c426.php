@@ -64,10 +64,10 @@
 			<div class="content-top-bottom">
 				<h2>PRODUK KAMI</h2>
 				<div class="col-md-6 men">
-					<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<?php echo e(url('images/t1.jpg')); ?>" alt="">
+					<a href="/home/single/<?php echo e($coba->id); ?>" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<?php echo e(url('storage/'.$coba->gambar)); ?>" alt="">
 						<div class="b-wrapper">
 											<h3 class="b-animate b-from-top top-in   b-delay03 ">
-												<span>TRIBECA LIVING</span>	
+												<span><?php echo e($coba->nama_barang); ?></span>	
 											</h3>
 										</div>
 					</a>
@@ -76,10 +76,10 @@
 				</div>
 				<div class="col-md-6">
 					<div class="col-md1 ">
-						<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<?php echo e(url('images/t2.jpg')); ?>" alt="">
+						<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<?php echo e(url('storage/'.$coba->gambar)); ?>" alt="">
 							<div class="b-wrapper">
 											<h3 class="b-animate b-from-top top-in1   b-delay03 ">
-												<span>CLARISSA</span>	
+												<span><?php echo e($coba->nama_barang); ?></span>	
 											</h3>
 										</div>
 						</a>
@@ -87,20 +87,20 @@
 					</div>
 					<div class="col-md2">
 						<div class="col-md-6 men1">
-							<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<?php echo e(url('images/t3.jpg')); ?>" alt="">
+							<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<?php echo e(url('storage/'.$coba->gambar)); ?>" alt="">
 									<div class="b-wrapper">
 											<h3 class="b-animate b-from-top top-in2   b-delay03 ">
-												<span>COLORMATE</span>	
+												<span><?php echo e($coba->nama_barang); ?></span>	
 											</h3>
 										</div>
 							</a>
 							
 						</div>
 						<div class="col-md-6 men2">
-							<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<?php echo e(url('images/t4.jpg')); ?>" alt="">
+							<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<?php echo e(url('storage/'.$coba->gambar)); ?>" alt="">
 									<div class="b-wrapper">
 											<h3 class="b-animate b-from-top top-in2   b-delay03 ">
-												<span>HERLEQUIN</span>	
+												<span><?php echo e($coba->nama_barang); ?></span>	
 											</h3>
 										</div>
 							</a>
