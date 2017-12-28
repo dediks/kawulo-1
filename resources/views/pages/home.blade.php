@@ -114,53 +114,52 @@
 			<div class="content-top">
 				<h1>PRODUK BARU</h1>
 				<div class="grid-in">
+					@foreach($items as $item)
 					<div class="col-md-3 grid-top simpleCart_shelfItem">
-						<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{url('images/pi.jpg')}}" alt="">
+						<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{url('storage/'.$item->gambar)}}" alt="">
 							<div class="b-wrapper">
 								<h3 class="b-animate b-from-left    b-delay03 ">
-									<span>TRIBECA LIVING</span>
-									
+									<span>{{$item->nama_barang}}</span>
 								</h3>
 							</div>
 						</a>
-				
-
-					<p><a href="/home/single">TRIBECA LIVING</a></p>
-					<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5000.000</p></a>
+						<p><a href="/home/single">{{$item->nama_barang}}</a></p>
+						<a href="#" class="item_add"><p class="number item_price"><i> </i>{{$item->harga}}</p></a>
 					</div>
-					<div class="col-md-3 grid-top simpleCart_shelfItem">
+					@endforeach
+					<!-- <div class="col-md-3 grid-top simpleCart_shelfItem">
 						<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{url('images/pi1.jpg')}}" alt="">
 							<div class="b-wrapper">
-											<h3 class="b-animate b-from-left    b-delay03 ">
-												<span>ESSENTIAL</span>	
-											</h3>
-										</div>
+									<h3 class="b-animate b-from-left    b-delay03 ">
+										<span>ESSENTIAL</span>	
+									</h3>
+							</div>
 						</a>
-					<p><a href="/home/single">ESSENTIAL</a></p>
-					<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.000.000</p></a>
+						<p><a href="/home/single">ESSENTIAL</a></p>
+						<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.000.000</p></a>
 					</div>
 					<div class="col-md-3 grid-top simpleCart_shelfItem">
 						<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{url('images/pi2.jpg')}}" alt="">
 							<div class="b-wrapper">
-											<h3 class="b-animate b-from-left    b-delay03 ">
-												<span>CLARISSA</span>	
-											</h3>
-										</div>
+								<h3 class="b-animate b-from-left    b-delay03 ">
+									<span>CLARISSA</span>	
+								</h3>
+							</div>
 						</a>
-					<p><a href="/home/single">CLARISSA</a></p>
-					<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.000.000</p></a>
+						<p><a href="/home/single">CLARISSA</a></p>
+						<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.000.000</p></a>
 					</div>
 					<div class="col-md-3 grid-top">
 						<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{url('images/pi4.jpg')}}" alt="">
 							<div class="b-wrapper">
-											<h3 class="b-animate b-from-left    b-delay03 ">
-												<span>LITTLE HOME</span>	
-											</h3>
-										</div>
+								<h3 class="b-animate b-from-left    b-delay03 ">
+									<span>LITTLE HOME</span>	
+								</h3>
+							</div>
 						</a>
-					<p><a href="/home/single">LITTLE HOME</a></p>
-					<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.000.000</p></a>
-					</div>
+						<p><a href="/home/single">LITTLE HOME</a></p>
+						<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.000.000</p></a>
+					</div> -->
 							<div class="clearfix"> </div>
 				</div>
 			</div>
