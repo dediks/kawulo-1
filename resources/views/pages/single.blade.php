@@ -1,4 +1,4 @@
-@extends('layouts.master') 
+@extends('layouts.master')
 
 <!DOCTYPE html>
 <html>
@@ -14,26 +14,26 @@
 	</div>
 	@stop
 	<!-- grow -->
-	
+
 	@section('content')
 	<div class="product">
 		<div class="container">
 			<div class="product-price1">
 				<div class="top-sing">
-					<div class="col-md-7 single-top">	
+					<div class="col-md-7 single-top">
 						<div class="flexslider">
 							<ul class="slides">
-								<li data-thumb="{{url('images/si.jpg')}}">
-									<div class="thumb-image"> <img src="{{url('images/si.jpg')}}" data-imagezoom="true" class="img-responsive"> </div>
+								<li data-thumb="{{url('storage/'.$item->gambar)}}">
+									<div class="thumb-image"> <img src="{{url('storage/'.$item->gambar)}}" data-imagezoom="true" class="img-responsive"> </div>
 								</li>
-								<li data-thumb="{{url('images/si1.jpg')}}">
-									<div class="thumb-image"> <img src="{{url('images/si1.jpg')}}" data-imagezoom="true" class="img-responsive"> </div>
+								<li data-thumb="{{url('storage/'.$item->gambar)}}">
+									<div class="thumb-image"> <img src="{{url('storage/'.$item->gambar)}}" data-imagezoom="true" class="img-responsive"> </div>
 								</li>
-								<li data-thumb="{{url('images/si2.jpg')}}">
-									<div class="thumb-image"> <img src="{{url('images/si2.jpg')}}" data-imagezoom="true" class="img-responsive"> </div>
-								</li> 
-								<li data-thumb="{{url('images/si3.jpg')}}">
-									<div class="thumb-image"> <img src="{{url('images/si3.jpg')}}" data-imagezoom="true" class="img-responsive"> </div>
+								<li data-thumb="{{url('storage/'.$item->gambar)}}">
+									<div class="thumb-image"> <img src="{{url('storage/'.$item->gambar)}}" data-imagezoom="true" class="img-responsive"> </div>
+								</li>
+								<li data-thumb="{{url('storage/'.$item->gambar)}}">
+									<div class="thumb-image"> <img src="{{url('storage/'.$item->gambar)}}" data-imagezoom="true" class="img-responsive"> </div>
 								</li>
 							</ul>
 						</div>
@@ -54,23 +54,22 @@ $(window).load(function() {
 	});
 });
 </script>
-</div>	
+</div>
 <div class="col-md-5 single-top-in simpleCart_shelfItem">
 	<div class="single-para ">
-		<h4>Lorem Ipsum</h4>
+		<h4>{{ $item->nama_barang }}</h4>
 		<div class="star-on">
 
-			<div class="review">
-				<a href="#"> 1 customer review </a>
+			<div class="stock">
+				<p>Stok yang tersedia : {{ $item->stock }}</p>
 
 			</div>
+
 			<div class="clearfix"> </div>
 		</div>
 
-		<h5 class="item_price">$ 500.00</h5>
-		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed 
-			diam nonummy nibh euismod tincidunt ut laoreet dolore 
-		magna aliquam erat </p>
+		<h5 class="item_price">Rp. {{ $item->harga }}</h5>
+		<p>{{ $item->deskripsi }} </p>
 		<div class="available">
 			<ul>
 				<li>Color
@@ -91,7 +90,7 @@ $(window).load(function() {
 				</ul>
 			</div>
 
-			<a href="#" class="add-cart item_add">ADD TO CART</a>
+			<a href="/home/cart/add/{{$item->id}}" class="add-cart item_add" onclick="refreshPage()">MASUKKAN KERANJANG</a>
 
 		</div>
 	</div>
@@ -104,38 +103,38 @@ $(window).load(function() {
 		<div class="product-at ">
 			<a href="#"><img class="img-responsive" src="{{url('images/pi3.jpg')}}" alt="">
 				<div class="pro-grid">
-					<span class="buy-in">Buy Now</span>
+					<span class="buy-in">BELI SEKARANG</span>
 				</div>
-			</a>	
+			</a>
 		</div>
 		<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
 		<div class="ca-rt">
-			<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>						
-		</div>						
+			<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
+		</div>
 	</div>
 	<div class="col-md-4 bottom-cd simpleCart_shelfItem">
 		<div class="product-at ">
 			<a href="#"><img class="img-responsive" src="{{url('images/pi1.jpg')}}" alt="">
 				<div class="pro-grid">
-					<span class="buy-in">Buy Now</span>
+					<span class="buy-in">BELI SEKARANG</span>
 				</div>
-			</a>	
+			</a>
 		</div>
 		<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
 		<div class="ca-rt">
-			<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>						
+			<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
 		</div>					</div>
 		<div class="col-md-4 bottom-cd simpleCart_shelfItem">
 			<div class="product-at ">
 				<a href="#"><img class="img-responsive" src="{{url('images/pi4.jpg')}}" alt="">
 					<div class="pro-grid">
-						<span class="buy-in">Buy Now</span>
+						<span class="buy-in">BELI SEKARANG</span>
 					</div>
-				</a>	
+				</a>
 			</div>
 			<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
 			<div class="ca-rt">
-				<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>						
+				<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
 			</div>					</div>
 			<div class="clearfix"> </div>
 		</div>

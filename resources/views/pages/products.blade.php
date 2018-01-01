@@ -1,4 +1,4 @@
-@extends('layouts.master') 
+@extends('layouts.master')
 
 <!DOCTYPE html>
 <html>
@@ -14,7 +14,7 @@
 		</div>
 		@stop
 	<!-- grow -->
-	
+
 		@section('content')
 		<div class="pro-du">
 		<div class="container">
@@ -24,13 +24,13 @@
 						<div class="product-at ">
 							<a href="/home/single"><img class="img-responsive" src="{{url('images/pi3.jpg')}}" alt="">
 							<div class="pro-grid">
-										<span class="buy-in">Buy Now</span>
+										<span class="buy-in">BELI SEKARANG</span>
 							</div>
-						</a>	
+						</a>
 						</div>
 						<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
 						<div class="ca-rt">
-							<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.400.000</p></a>				
+							<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.400.000</p></a>
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -38,15 +38,15 @@
 						<div class="product-at ">
 							<a href="/home/single"><img class="img-responsive" src="{{url('images/pi1.jpg')}}" alt="">
 							<div class="pro-grid">
-										<span class="buy-in">Buy Now</span>
+										<span class="buy-in">BELI SEKARANG</span>
 							</div>
-						</a>	
+						</a>
 						</div>
 						<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
 						<div class="ca-rt">
-							<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.400.000</p></a>				
+							<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.400.000</p></a>
 						</div>
-						<div class="clearfix"></div>					
+						<div class="clearfix"></div>
 					</div>
 						<div class="clearfix"> </div>
 				</div>
@@ -55,29 +55,29 @@
 						<div class="product-at ">
 							<a href="/home/single"><img class="img-responsive" src="{{url('images/pi5.jpg')}}" alt="">
 							<div class="pro-grid">
-										<span class="buy-in">Buy Now</span>
+										<span class="buy-in">BELI SEKARANG</span>
 							</div>
-						</a>	
+						</a>
 						</div>
 						<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
 						<div class="ca-rt">
-							<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.400.000</p></a>				
+							<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.400.000</p></a>
 						</div>
-						<div class="clearfix"></div>					
+						<div class="clearfix"></div>
 					</div>
 					<div class="col-md-6 bottom-cd simpleCart_shelfItem">
 						<div class="product-at ">
 							<a href="/home/single"><img class="img-responsive" src="{{url('images/pi.jpg')}}" alt="">
 							<div class="pro-grid">
-										<span class="buy-in">Buy Now</span>
+										<span class="buy-in">BELI SEKARANG</span>
 							</div>
-						</a>	
+						</a>
 						</div>
 						<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
 						<div class="ca-rt">
-							<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.400.000</p></a>				
+							<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.400.000</p></a>
 						</div>
-						<div class="clearfix"></div>					
+						<div class="clearfix"></div>
 					</div>
 					<div class="clearfix"> </div>
 				</div>

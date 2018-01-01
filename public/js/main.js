@@ -9,11 +9,11 @@ jQuery(document).ready(function($){
 			var selectedTab = selectedItem.data('content'),
 				selectedContent = tabContentWrapper.find('li[data-content="'+selectedTab+'"]'),
 				slectedContentHeight = selectedContent.innerHeight();
-			
+
 			tabItems.removeClass('selected');
 			selectedItem.addClass('selected');
 			selectedContent.addClass('selected').siblings('li').removeClass('selected');
-			//animate tabContentWrapper height when content changes 
+			//animate tabContentWrapper height when content changes
 			tabContentWrapper.animate({
 				'height': slectedContentHeight
 			}, 200);
@@ -26,7 +26,7 @@ jQuery(document).ready(function($){
 		checkScrolling($('.cd-tabs nav'));
 		tabContentWrapper.css('height', 'auto');
 	});
-	$('.cd-tabs nav').on('scroll', function(){ 
+	$('.cd-tabs nav').on('scroll', function(){
 		checkScrolling($(this));
 	});
 
@@ -40,3 +40,7 @@ jQuery(document).ready(function($){
 		}
 	}
 });
+
+	// function refreshPage(){
+	// 	window.location.reload();
+	// }

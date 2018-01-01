@@ -11,4 +11,9 @@ class ProductsController extends Controller
     {
     	return view('pages/products');
     }
+
+    public function show($room, $category)
+    {
+
+    }
 }

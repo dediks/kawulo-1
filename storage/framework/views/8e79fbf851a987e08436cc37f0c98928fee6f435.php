@@ -6,7 +6,7 @@
 						<li><a href="<?php echo e(url('twitter.com')); ?>"><i class="twiter"> </i></a></li>
 						<li><a href="<?php echo e(url('instagram.com')); ?>"><i class="inst"> </i></a></li>
 						<li><a href="<?php echo e(url('google.com')); ?>"><i class="goog"> </i></a></li>
-						<div class="clearfix"></div>	
+						<div class="clearfix"></div>
 					</ul>
 				</div>
 				<div class="header-left">
@@ -36,7 +36,7 @@
 									<span class="simpleCart_total"></span> </div>
 									<img src="<?php echo e(url('/images/cart.png')); ?>" alt=""/></h3>
 								</a>
-								<p><a href="javascript:;" class="simpleCart_empty">Kosongkan Keranjang</a></p>
+								<p><a href="/home/cart/clear" class="simpleCart_empty">Kosongkan Keranjang</a></p>
 
 							</div>
 						</div>
@@ -64,8 +64,8 @@
 												<li><a href="/home/products">Pillow</a></li>
 												<li><a href="/home/products">Pillow Protector</a></li>
 
-											</ul>	
-										</div>							
+											</ul>
+										</div>
 									</div>
 									<div class="col1">
 										<div class="h_nav">
@@ -76,8 +76,8 @@
 												<li><a href="/home/products">Pima Cotton</a></li>
 												<li><a href="/home/products">Silk </a></li>
 
-											</ul>	
-										</div>							
+											</ul>
+										</div>
 									</div>
 									<div class="col1">
 										<div class="h_nav">
@@ -87,12 +87,12 @@
 												<li><a href="/home/products">Mattress Topper</a></li>
 												<li><a href="/home/products">Pillow</a></li>
 												<li><a href="/home/products">Pillow Protector</a></li>
-											</ul>	
-										</div>												
+											</ul>
+										</div>
 									</div>
 								</div>
 							</div>
-						</li>	
+						</li>
 						<!--menu dapur-->
 						<li><a class="color1" href="#">DAPUR</a>
 							<div class="mepanel">
@@ -106,8 +106,8 @@
 												<li><a href="/home/products">Pillow</a></li>
 												<li><a href="/home/products">Pillow Protector</a></li>
 
-											</ul>	
-										</div>							
+											</ul>
+										</div>
 									</div>
 									<div class="col1">
 										<div class="h_nav">
@@ -118,8 +118,8 @@
 												<li><a href="/home/products">Pima Cotton</a></li>
 												<li><a href="/home/products">Silk </a></li>
 
-											</ul>	
-										</div>							
+											</ul>
+										</div>
 									</div>
 									<div class="col1">
 										<div class="h_nav">
@@ -129,8 +129,8 @@
 												<li><a href="/home/products">Mattress Topper</a></li>
 												<li><a href="/home/products">Pillow</a></li>
 												<li><a href="/home/products">Pillow Protector</a></li>
-											</ul>	
-										</div>												
+											</ul>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -148,8 +148,8 @@
 												<li><a href="/home/products">Pillow</a></li>
 												<li><a href="/home/products">Pillow Protector</a></li>
 
-											</ul>	
-										</div>								
+											</ul>
+										</div>
 									</div>
 									<div class="col1">
 										<div class="h_nav">
@@ -160,8 +160,8 @@
 												<li><a href="/home/products">Pima Cotton</a></li>
 												<li><a href="/home/products">Silk </a></li>
 
-											</ul>		
-										</div>							
+											</ul>
+										</div>
 									</div>
 									<div class="col1">
 										<div class="h_nav">
@@ -172,17 +172,17 @@
 												<li><a href="/home/products">Mattress Topper</a></li>
 												<li><a href="/home/products">Pillow</a></li>
 												<li><a href="/home/products">Pillow Protector</a></li>
-											</ul>	
-										</div>												
+											</ul>
+										</div>
 									</div>
 								</div>
 							</div>
 						</li>
 						<li><a class="color6" href="/home/contact">PESAN</a></li>
-						<li><a class="color4" href="/home/login">MASUK</a></li>				
-					</ul> 
+						<li><a class="color4" href="/home/login">MASUK</a></li>
+					</ul>
 				</div>
-				
+
 				<div class="clearfix"> </div>
 			</div>
 		</div>
