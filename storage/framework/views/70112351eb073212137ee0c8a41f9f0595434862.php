@@ -44,7 +44,7 @@
 							<input  type="text" value="Alamat" name="Alamat" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Alamat';}" required="">
 							<div class="clearfix"></div>
 						</div>
-						<input type="submit" value="Kirim">
+						<input type="submit" value="Daftar">
 					</form>
 				</div>
 			</div>

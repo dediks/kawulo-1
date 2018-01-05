@@ -1,4 +1,4 @@
-@extends('layouts.master') 
+@extends('layouts.master')
 
 <!DOCTYPE html>
 <html>
@@ -26,32 +26,32 @@
 			<div  id="top" class="callbacks_container">
 			<ul class="rslides" id="slider">
 			    <li>
-					
+
 						<div class="banner-text">
 							<h3>Lorem Ipsum is   </h3>
 						<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
-						
+
 						</div>
-				
+
 				</li>
 				<li>
-					
+
 						<div class="banner-text">
 							<h3>There are many  </h3>
 						<p>Popular belief Contrary to , Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
-												
+
 
 						</div>
-					
+
 				</li>
 				<li>
 						<div class="banner-text">
 							<h3>Sed ut perspiciatis</h3>
 						<p>Lorem Ipsum is not simply random text. Contrary to popular belief, It has roots in a piece of classical Latin literature from 45 BC.</p>
-								
+
 
 						</div>
-					
+
 				</li>
 			</ul>
 		</div>
@@ -67,44 +67,44 @@
 					<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{url('images/t1.jpg')}}" alt="">
 						<div class="b-wrapper">
 											<h3 class="b-animate b-from-top top-in   b-delay03 ">
-												<span>TRIBECA LIVING</span>	
+												<span>TRIBECA LIVING</span>
 											</h3>
 										</div>
 					</a>
-					
-					
+
+
 				</div>
 				<div class="col-md-6">
 					<div class="col-md1 ">
 						<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{url('images/t2.jpg')}}" alt="">
 							<div class="b-wrapper">
 											<h3 class="b-animate b-from-top top-in1   b-delay03 ">
-												<span>CLARISSA</span>	
+												<span>CLARISSA</span>
 											</h3>
 										</div>
 						</a>
-						
+
 					</div>
 					<div class="col-md2">
 						<div class="col-md-6 men1">
 							<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{url('images/t3.jpg')}}" alt="">
 									<div class="b-wrapper">
 											<h3 class="b-animate b-from-top top-in2   b-delay03 ">
-												<span>COLORMATE</span>	
+												<span>COLORMATE</span>
 											</h3>
 										</div>
 							</a>
-							
+
 						</div>
 						<div class="col-md-6 men2">
 							<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{url('images/t4.jpg')}}" alt="">
 									<div class="b-wrapper">
 											<h3 class="b-animate b-from-top top-in2   b-delay03 ">
-												<span>HERLEQUIN</span>	
+												<span>HERLEQUIN</span>
 											</h3>
 										</div>
 							</a>
-							
+
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -116,22 +116,22 @@
 				<div class="grid-in">
 					@foreach($items as $item)
 					<div class="col-md-3 grid-top simpleCart_shelfItem">
-						<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{url('storage/'.$item->gambar)}}" alt="">
+						<a href="/home/single/{{$item->id}}" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{url('storage/'.$item->gambar)}}" alt="">
 							<div class="b-wrapper">
 								<h3 class="b-animate b-from-left    b-delay03 ">
 									<span>{{$item->nama_barang}}</span>
 								</h3>
 							</div>
 						</a>
-						<p><a href="/home/single">{{$item->nama_barang}}</a></p>
-						<a href="#" class="item_add"><p class="number item_price"><i> </i>{{$item->harga}}</p></a>
+						<p><a href="/home/single/{{$item->id}}">{{$item->nama_barang}}</a></p>
+						<a href="/home/cart/add/{{$item->id}}" class="item_add"><p class="number item_price"><i> </i>{{$item->harga}}</p></a>
 					</div>
 					@endforeach
 					<!-- <div class="col-md-3 grid-top simpleCart_shelfItem">
 						<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{url('images/pi1.jpg')}}" alt="">
 							<div class="b-wrapper">
 									<h3 class="b-animate b-from-left    b-delay03 ">
-										<span>ESSENTIAL</span>	
+										<span>ESSENTIAL</span>
 									</h3>
 							</div>
 						</a>
@@ -142,7 +142,7 @@
 						<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{url('images/pi2.jpg')}}" alt="">
 							<div class="b-wrapper">
 								<h3 class="b-animate b-from-left    b-delay03 ">
-									<span>CLARISSA</span>	
+									<span>CLARISSA</span>
 								</h3>
 							</div>
 						</a>
@@ -153,7 +153,7 @@
 						<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{url('images/pi4.jpg')}}" alt="">
 							<div class="b-wrapper">
 								<h3 class="b-animate b-from-left    b-delay03 ">
-									<span>LITTLE HOME</span>	
+									<span>LITTLE HOME</span>
 								</h3>
 							</div>
 						</a>

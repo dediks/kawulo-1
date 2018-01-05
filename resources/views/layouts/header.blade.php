@@ -33,7 +33,7 @@
 						<div class="cart box_1">
 							<a href="/home/checkout">
 								<h3> <div class="total">
-									<span class="simpleCart_total"></span> </div>
+									<span>Rp. {{$data['total']}}</span> </div>
 									<img src="{{url('/images/cart.png')}}" alt=""/></h3>
 								</a>
 								<p><a href="/home/cart/clear" class="simpleCart_empty">Kosongkan Keranjang</a></p>
@@ -53,7 +53,7 @@
 					<div class=" h_menu4">
 						<ul class="memenu skyblue">
 							<!--menu ruang keluarga-->
-							<li><a class="color8" href="#">RUANG TAMU</a><div class="mepanel">
+							<li><a class="color8">{{strtoupper($data['rooms'][1]->nama)}}</a><div class="mepanel">
 								<div class="row">
 									<div class="col1">
 										<div class="h_nav">
@@ -94,7 +94,7 @@
 							</div>
 						</li>
 						<!--menu dapur-->
-						<li><a class="color1" href="#">DAPUR</a>
+						<li><a class="color1">{{strtoupper($data['rooms'][2]->nama)}}</a>
 							<div class="mepanel">
 								<div class="row">
 									<div class="col1">
@@ -136,7 +136,7 @@
 							</div>
 						</li>
 						<!--menu kantor-->
-						<li class="grid"><a class="color2" href="#">KANTOR</a>
+						<li class="grid"><a class="color2" >{{strtoupper($data['rooms'][3]->nama)}}</a>
 							<div class="mepanel">
 								<div class="row">
 									<div class="col1">

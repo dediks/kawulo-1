@@ -327,7 +327,7 @@
                                 <div class="col-md-2 no-padding-left-right">
                                     <select class="form-control group_select" name="<?php echo e($setting->key); ?>_group">
                                         <?php $__currentLoopData = $groups; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $group): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <option value="<?php echo e($group); ?>" <?php echo $setting->group == $group ? 'selected' : ''; ?>><?php echo e($group); ?></group>
+                                        <option value="<?php echo e($group); ?>" <?php echo $setting->group == $group ? 'selected' : ''; ?>><?php echo e($group); ?></option>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </select>
                                 </div>
@@ -383,7 +383,7 @@
                         <label for="group"><?php echo e(__('voyager.settings.group')); ?></label>
                         <select class="form-control group_select group_select_new" name="group">
                             <?php $__currentLoopData = $groups; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $group): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <option value="<?php echo e($group); ?>"><?php echo e($group); ?></group>
+                                <option value="<?php echo e($group); ?>"><?php echo e($group); ?></option>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                     </div>

@@ -28,8 +28,9 @@ class CartController extends Controller
 
       $item->stock = $item->stock-1;
       $item->save();
+
       // return view('pages/single', ['item'=>$item]);
-      return redirect()->route('single', ['item' => $item]);
+      return redirect()->back();
     }
 
     public function clear()
@@ -51,7 +52,7 @@ class CartController extends Controller
       DB::table('baskets')
           ->where('id_user', $user->id)
           ->delete();
-          
+
       return redirect()->back();
     }
 }
