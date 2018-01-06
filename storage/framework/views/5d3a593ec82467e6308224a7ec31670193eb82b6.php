@@ -68,25 +68,6 @@ $(window).load(function() {
 
 		<h5 class="item_price">Rp. <?php echo e($item->harga); ?></h5>
 		<p><?php echo e($item->deskripsi); ?> </p>
-		<div class="available">
-			<ul>
-				<li>Color
-					<select>
-						<option>Silver</option>
-						<option>Black</option>
-						<option>Dark Black</option>
-						<option>Red</option>
-					</select></li>
-					<li class="size-in">Size<select>
-						<option>Large</option>
-						<option>Medium</option>
-						<option>small</option>
-						<option>Large</option>
-						<option>small</option>
-					</select></li>
-					<div class="clearfix"> </div>
-				</ul>
-			</div>
 
 			<a href="/home/cart/add/<?php echo e($item->id); ?>" class="add-cart item_add" onclick="refreshPage()">MASUKKAN KERANJANG</a>
 

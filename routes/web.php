@@ -43,6 +43,7 @@ Route::get('/home/register', 'Pages\RegisterController@index');
 
 /*Products*/
 Route::get('/home/products', 'Pages\ProductsController@index');
+Route::get('/home/products/{room}/{category}', 'Pages\ProductsController@show');
 
 /*Cart*/
 Route::get('/home/cart/add/{id}', 'Records\CartController@show');

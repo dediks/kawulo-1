@@ -55,10 +55,10 @@
 							<!--menu ruang keluarga-->
 							<li><a class="color8">{{strtoupper($data['rooms'][1]->nama)}}</a><div class="mepanel">
 								<div class="row">
-									<div class="col1">
+									<div class="col1" style="width : 100%">
 										<div class="h_nav">
 											<ul>
-												<li><a href="/home/products">Bedskirt</a></li>
+												<li><a href="/home/products/{{$data['rooms'][1]->id}}/{{$data['categories'][1]->id}}">{{$data['categories'][1]->name}}</a></li>
 												<li><a href="/home/products">Blanket/Throw</a></li>
 												<li><a href="/home/products">Mattress Topper</a></li>
 												<li><a href="/home/products">Pillow</a></li>
@@ -67,7 +67,7 @@
 											</ul>
 										</div>
 									</div>
-									<div class="col1">
+									{{-- <div class="col1">
 										<div class="h_nav">
 											<ul>
 												<li><a href="/home/products">Alpaca</a></li>
@@ -89,7 +89,7 @@
 												<li><a href="/home/products">Pillow Protector</a></li>
 											</ul>
 										</div>
-									</div>
+									</div> --}}
 								</div>
 							</div>
 						</li>
@@ -97,7 +97,7 @@
 						<li><a class="color1">{{strtoupper($data['rooms'][2]->nama)}}</a>
 							<div class="mepanel">
 								<div class="row">
-									<div class="col1">
+									<div class="col1" style="width : 100%">
 										<div class="h_nav">
 											<ul>
 												<li><a href="/home/products">Bedskirt</a></li>
@@ -105,11 +105,10 @@
 												<li><a href="/home/products">Mattress Topper</a></li>
 												<li><a href="/home/products">Pillow</a></li>
 												<li><a href="/home/products">Pillow Protector</a></li>
-
 											</ul>
 										</div>
 									</div>
-									<div class="col1">
+									{{-- <div class="col1">
 										<div class="h_nav">
 											<ul>
 												<li><a href="/home/products">Alpaca</a></li>
@@ -121,6 +120,7 @@
 											</ul>
 										</div>
 									</div>
+
 									<div class="col1">
 										<div class="h_nav">
 											<ul>
@@ -131,7 +131,7 @@
 												<li><a href="/home/products">Pillow Protector</a></li>
 											</ul>
 										</div>
-									</div>
+									</div> --}}
 								</div>
 							</div>
 						</li>
@@ -139,7 +139,7 @@
 						<li class="grid"><a class="color2" >{{strtoupper($data['rooms'][3]->nama)}}</a>
 							<div class="mepanel">
 								<div class="row">
-									<div class="col1">
+									<div class="col1" style="width:100%">
 										<div class="h_nav">
 											<ul>
 												<li><a href="/home/products">Bedskirt</a></li>
@@ -151,7 +151,7 @@
 											</ul>
 										</div>
 									</div>
-									<div class="col1">
+									{{-- <div class="col1">
 										<div class="h_nav">
 											<ul>
 												<li><a href="/home/products">Alpaca</a></li>
@@ -174,7 +174,7 @@
 												<li><a href="/home/products">Pillow Protector</a></li>
 											</ul>
 										</div>
-									</div>
+									</div> --}}
 								</div>
 							</div>
 						</li>
