@@ -21,6 +21,7 @@
 					<div class="col-md-7 single-top">
 						<div class="flexslider">
 							<ul class="slides">
+<<<<<<< HEAD
 								<li data-thumb="<?php echo e(url('storage/'.$item->gambar)); ?>">
 									<div class="thumb-image"> <img src="<?php echo e(url('storage/'.$item->gambar)); ?>" data-imagezoom="true" class="img-responsive"> </div>
 								</li>
@@ -32,6 +33,19 @@
 								</li>
 								<li data-thumb="<?php echo e(url('storage/'.$item->gambar)); ?>">
 									<div class="thumb-image"> <img src="<?php echo e(url('storage/'.$item->gambar)); ?>" data-imagezoom="true" class="img-responsive"> </div>
+=======
+								<li data-thumb="<?php echo e(url('storage/'.$blogs->gambar)); ?>">
+									<div class="thumb-image"> <img src="<?php echo e(url('storage/'.$blogs->gambar)); ?>" data-imagezoom="true" class="img-responsive"> </div>
+								</li>
+								<li data-thumb="<?php echo e(url('storage/'.$blogs->gambar)); ?>">
+									<div class="thumb-image"> <img src="<?php echo e(url('storage/'.$blogs->gambar)); ?>" data-imagezoom="true" class="img-responsive"> </div>
+								</li>
+								<li data-thumb="<?php echo e(url('storage/'.$blogs->gambar)); ?>">
+									<div class="thumb-image"> <img src="<?php echo e(url('storage/'.$blogs->gambar)); ?>" data-imagezoom="true" class="img-responsive"> </div>
+								</li> 
+								<li data-thumb="<?php echo e(url('storage/'.$blogs->gambar)); ?>">
+									<div class="thumb-image"> <img src="<?php echo e(url('storage/'.$blogs->gambar)); ?>" data-imagezoom="true" class="img-responsive"> </div>
+>>>>>>> master
 								</li>
 							</ul>
 						</div>
@@ -55,6 +69,7 @@ $(window).load(function() {
 </div>
 <div class="col-md-5 single-top-in simpleCart_shelfItem">
 	<div class="single-para ">
+<<<<<<< HEAD
 		<h4><?php echo e($item->nama_barang); ?></h4>
 		<div class="star-on">
 
@@ -68,6 +83,34 @@ $(window).load(function() {
 
 		<h5 class="item_price">Rp. <?php echo e($item->harga); ?></h5>
 		<p><?php echo e($item->deskripsi); ?> </p>
+=======
+		<h4><?php echo e($blogs->nama_barang); ?></h4>
+		<div class="star-on">
+			<div class="clearfix"> </div>
+		</div>
+
+		<h5 class="item_price">Rp <?php echo e($blogs->harga); ?></h5>
+		<p><?php echo e($blogs->deskripsi); ?></p>
+		<div class="available">
+			<ul>
+				<li>Color
+					<select>
+						<option>Silver</option>
+						<option>Black</option>
+						<option>Dark Black</option>
+						<option>Red</option>
+					</select></li>
+					<li class="size-in">Size<select>
+						<option>Large</option>
+						<option>Medium</option>
+						<option>small</option>
+						<option>Large</option>
+						<option>small</option>
+					</select></li>
+					<div class="clearfix"> </div>
+				</ul>
+			</div>
+>>>>>>> master
 
 			<a href="/home/cart/add/<?php echo e($item->id); ?>" class="add-cart item_add" onclick="refreshPage()">MASUKKAN KERANJANG</a>
 

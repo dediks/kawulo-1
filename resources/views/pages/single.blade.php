@@ -57,6 +57,7 @@ $(window).load(function() {
 </div>
 <div class="col-md-5 single-top-in simpleCart_shelfItem">
 	<div class="single-para ">
+<<<<<<< HEAD
 		<h4>{{ $item->nama_barang }}</h4>
 		<div class="star-on">
 
@@ -70,6 +71,34 @@ $(window).load(function() {
 
 		<h5 class="item_price">Rp. {{ $item->harga }}</h5>
 		<p>{{ $item->deskripsi }} </p>
+=======
+		<h4>{{$blogs->nama_barang}}</h4>
+		<div class="star-on">
+			<div class="clearfix"> </div>
+		</div>
+
+		<h5 class="item_price">Rp {{$blogs->harga}}</h5>
+		<p>{{$blogs->deskripsi}}</p>
+		<div class="available">
+			<ul>
+				<li>Color
+					<select>
+						<option>Silver</option>
+						<option>Black</option>
+						<option>Dark Black</option>
+						<option>Red</option>
+					</select></li>
+					<li class="size-in">Size<select>
+						<option>Large</option>
+						<option>Medium</option>
+						<option>small</option>
+						<option>Large</option>
+						<option>small</option>
+					</select></li>
+					<div class="clearfix"> </div>
+				</ul>
+			</div>
+>>>>>>> master
 
 			<a href="/home/cart/add/{{$item->id}}" class="add-cart item_add" onclick="refreshPage()">MASUKKAN KERANJANG</a>
 
