@@ -57,12 +57,11 @@ $(window).load(function() {
 </div>
 <div class="col-md-5 single-top-in simpleCart_shelfItem">
 	<div class="single-para ">
-<<<<<<< HEAD
-		<h4>{{ $item->nama_barang }}</h4>
+		<h4>{{ strtoupper($item->nama_barang) }}</h4>
 		<div class="star-on">
 
 			<div class="stock">
-				<p>Stok yang tersedia : {{ $item->stock }}</p>
+				<p>stok yang tersedia : {{ $item->stock }}</p>
 
 			</div>
 
@@ -71,36 +70,7 @@ $(window).load(function() {
 
 		<h5 class="item_price">Rp. {{ $item->harga }}</h5>
 		<p>{{ $item->deskripsi }} </p>
-=======
-		<h4>{{$blogs->nama_barang}}</h4>
-		<div class="star-on">
-			<div class="clearfix"> </div>
-		</div>
-
-		<h5 class="item_price">Rp {{$blogs->harga}}</h5>
-		<p>{{$blogs->deskripsi}}</p>
-		<div class="available">
-			<ul>
-				<li>Color
-					<select>
-						<option>Silver</option>
-						<option>Black</option>
-						<option>Dark Black</option>
-						<option>Red</option>
-					</select></li>
-					<li class="size-in">Size<select>
-						<option>Large</option>
-						<option>Medium</option>
-						<option>small</option>
-						<option>Large</option>
-						<option>small</option>
-					</select></li>
-					<div class="clearfix"> </div>
-				</ul>
-			</div>
->>>>>>> master
-
-			<a href="/home/cart/add/{{$item->id}}" class="add-cart item_add" onclick="refreshPage()">MASUKKAN KERANJANG</a>
+<a href="/home/cart/add/{{$item->id}}" class="add-cart item_add" onclick="refreshPage()">MASUKKAN KERANJANG</a>
 
 		</div>
 	</div>
@@ -109,20 +79,22 @@ $(window).load(function() {
 <!---->
 
 <div class=" bottom-product">
-	<div class="col-md-4 bottom-cd simpleCart_shelfItem">
-		<div class="product-at ">
-			<a href="#"><img class="img-responsive" src="{{url('images/pi3.jpg')}}" alt="">
-				<div class="pro-grid">
-					<span class="buy-in">BELI SEKARANG</span>
-				</div>
-			</a>
+	@foreach ($others as $other)
+		<div class="col-md-4 bottom-cd simpleCart_shelfItem">
+			<div class="product-at ">
+				<a href="/home/single/{{$other->id}}"><img class="img-responsive" src="{{url('storage/'.$other->gambar)}}" alt="">
+					<div class="pro-grid">
+						<span class="buy-in">BELI SEKARANG</span>
+					</div>
+				</a>
+			</div>
+			<p class="tun"><span>{{$other->nama_barang}}</span><br>stock yang tersedia : {{$other->stock}}</p>
+			<div class="ca-rt">
+				<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. {{$other->harga}}</p></a>
+			</div>
 		</div>
-		<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-		<div class="ca-rt">
-			<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
-		</div>
-	</div>
-	<div class="col-md-4 bottom-cd simpleCart_shelfItem">
+	@endforeach
+	{{-- <div class="col-md-4 bottom-cd simpleCart_shelfItem">
 		<div class="product-at ">
 			<a href="#"><img class="img-responsive" src="{{url('images/pi1.jpg')}}" alt="">
 				<div class="pro-grid">
@@ -133,7 +105,8 @@ $(window).load(function() {
 		<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
 		<div class="ca-rt">
 			<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
-		</div>					</div>
+		</div>
+	</div>
 		<div class="col-md-4 bottom-cd simpleCart_shelfItem">
 			<div class="product-at ">
 				<a href="#"><img class="img-responsive" src="{{url('images/pi4.jpg')}}" alt="">
@@ -145,7 +118,8 @@ $(window).load(function() {
 			<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
 			<div class="ca-rt">
 				<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
-			</div>					</div>
+			</div>
+		</div> --}}
 			<div class="clearfix"> </div>
 		</div>
 	</div>

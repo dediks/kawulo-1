@@ -21,7 +21,6 @@
 					<div class="col-md-7 single-top">
 						<div class="flexslider">
 							<ul class="slides">
-<<<<<<< HEAD
 								<li data-thumb="<?php echo e(url('storage/'.$item->gambar)); ?>">
 									<div class="thumb-image"> <img src="<?php echo e(url('storage/'.$item->gambar)); ?>" data-imagezoom="true" class="img-responsive"> </div>
 								</li>
@@ -33,19 +32,6 @@
 								</li>
 								<li data-thumb="<?php echo e(url('storage/'.$item->gambar)); ?>">
 									<div class="thumb-image"> <img src="<?php echo e(url('storage/'.$item->gambar)); ?>" data-imagezoom="true" class="img-responsive"> </div>
-=======
-								<li data-thumb="<?php echo e(url('storage/'.$blogs->gambar)); ?>">
-									<div class="thumb-image"> <img src="<?php echo e(url('storage/'.$blogs->gambar)); ?>" data-imagezoom="true" class="img-responsive"> </div>
-								</li>
-								<li data-thumb="<?php echo e(url('storage/'.$blogs->gambar)); ?>">
-									<div class="thumb-image"> <img src="<?php echo e(url('storage/'.$blogs->gambar)); ?>" data-imagezoom="true" class="img-responsive"> </div>
-								</li>
-								<li data-thumb="<?php echo e(url('storage/'.$blogs->gambar)); ?>">
-									<div class="thumb-image"> <img src="<?php echo e(url('storage/'.$blogs->gambar)); ?>" data-imagezoom="true" class="img-responsive"> </div>
-								</li> 
-								<li data-thumb="<?php echo e(url('storage/'.$blogs->gambar)); ?>">
-									<div class="thumb-image"> <img src="<?php echo e(url('storage/'.$blogs->gambar)); ?>" data-imagezoom="true" class="img-responsive"> </div>
->>>>>>> master
 								</li>
 							</ul>
 						</div>
@@ -69,12 +55,11 @@ $(window).load(function() {
 </div>
 <div class="col-md-5 single-top-in simpleCart_shelfItem">
 	<div class="single-para ">
-<<<<<<< HEAD
-		<h4><?php echo e($item->nama_barang); ?></h4>
+		<h4><?php echo e(strtoupper($item->nama_barang)); ?></h4>
 		<div class="star-on">
 
 			<div class="stock">
-				<p>Stok yang tersedia : <?php echo e($item->stock); ?></p>
+				<p>stok yang tersedia : <?php echo e($item->stock); ?></p>
 
 			</div>
 
@@ -83,36 +68,7 @@ $(window).load(function() {
 
 		<h5 class="item_price">Rp. <?php echo e($item->harga); ?></h5>
 		<p><?php echo e($item->deskripsi); ?> </p>
-=======
-		<h4><?php echo e($blogs->nama_barang); ?></h4>
-		<div class="star-on">
-			<div class="clearfix"> </div>
-		</div>
-
-		<h5 class="item_price">Rp <?php echo e($blogs->harga); ?></h5>
-		<p><?php echo e($blogs->deskripsi); ?></p>
-		<div class="available">
-			<ul>
-				<li>Color
-					<select>
-						<option>Silver</option>
-						<option>Black</option>
-						<option>Dark Black</option>
-						<option>Red</option>
-					</select></li>
-					<li class="size-in">Size<select>
-						<option>Large</option>
-						<option>Medium</option>
-						<option>small</option>
-						<option>Large</option>
-						<option>small</option>
-					</select></li>
-					<div class="clearfix"> </div>
-				</ul>
-			</div>
->>>>>>> master
-
-			<a href="/home/cart/add/<?php echo e($item->id); ?>" class="add-cart item_add" onclick="refreshPage()">MASUKKAN KERANJANG</a>
+<a href="/home/cart/add/<?php echo e($item->id); ?>" class="add-cart item_add" onclick="refreshPage()">MASUKKAN KERANJANG</a>
 
 		</div>
 	</div>
@@ -121,43 +77,22 @@ $(window).load(function() {
 <!---->
 
 <div class=" bottom-product">
-	<div class="col-md-4 bottom-cd simpleCart_shelfItem">
-		<div class="product-at ">
-			<a href="#"><img class="img-responsive" src="<?php echo e(url('images/pi3.jpg')); ?>" alt="">
-				<div class="pro-grid">
-					<span class="buy-in">BELI SEKARANG</span>
-				</div>
-			</a>
-		</div>
-		<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-		<div class="ca-rt">
-			<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
-		</div>
-	</div>
-	<div class="col-md-4 bottom-cd simpleCart_shelfItem">
-		<div class="product-at ">
-			<a href="#"><img class="img-responsive" src="<?php echo e(url('images/pi1.jpg')); ?>" alt="">
-				<div class="pro-grid">
-					<span class="buy-in">BELI SEKARANG</span>
-				</div>
-			</a>
-		</div>
-		<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-		<div class="ca-rt">
-			<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
-		</div>					</div>
+	<?php $__currentLoopData = $others; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $other): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 		<div class="col-md-4 bottom-cd simpleCart_shelfItem">
 			<div class="product-at ">
-				<a href="#"><img class="img-responsive" src="<?php echo e(url('images/pi4.jpg')); ?>" alt="">
+				<a href="/home/single/<?php echo e($other->id); ?>"><img class="img-responsive" src="<?php echo e(url('storage/'.$other->gambar)); ?>" alt="">
 					<div class="pro-grid">
 						<span class="buy-in">BELI SEKARANG</span>
 					</div>
 				</a>
 			</div>
-			<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+			<p class="tun"><span><?php echo e($other->nama_barang); ?></span><br>stock yang tersedia : <?php echo e($other->stock); ?></p>
 			<div class="ca-rt">
-				<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
-			</div>					</div>
+				<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. <?php echo e($other->harga); ?></p></a>
+			</div>
+		</div>
+	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+	
 			<div class="clearfix"> </div>
 		</div>
 	</div>

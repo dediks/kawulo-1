@@ -63,32 +63,7 @@
 												<li><a href="/home/products">Mattress Topper</a></li>
 												<li><a href="/home/products">Pillow</a></li>
 												<li><a href="/home/products">Pillow Protector</a></li>
-<<<<<<< HEAD
 
-=======
-											</ul>
-										</div>
-									</div>
-									<div class="col1">
-										<div class="h_nav">
-											<ul>
-												<li><a href="/home/products">Alpaca</a></li>
-												<li><a href="/home/products">Cashmere</a></li>
-												<li><a href="/home/products">Cotton</a></li>
-												<li><a href="/home/products">Pima Cotton</a></li>
-												<li><a href="/home/products">Silk </a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="col1">
-										<div class="h_nav">
-											<ul>
-												<li><a href="/home/products">Bedskirt</a></li>
-												<li><a href="/home/products">Blanket/Throw</a></li>
-												<li><a href="/home/products">Mattress Topper</a></li>
-												<li><a href="/home/products">Pillow</a></li>
-												<li><a href="/home/products">Pillow Protector</a></li>
->>>>>>> master
 											</ul>
 										</div>
 									</div>
@@ -100,35 +75,7 @@
 						<li><a class="color1"><?php echo e(strtoupper($data['rooms'][2]->nama)); ?></a>
 							<div class="mepanel">
 								<div class="row">
-<<<<<<< HEAD
 									<div class="col1" style="width : 100%">
-=======
-									<div class="col1">
-										<div class="h_nav">
-											<ul>
-												<li><a href="/home/products">Bedskirt</a></li>
-												<li><a href="/home/products">Blanket/Throw</a></li>
-												<li><a href="/home/products">Mattress Topper</a></li>
-												<li><a href="/home/products">Pillow</a></li>
-												<li><a href="/home/products">Pillow Protector</a></li>
-
-											</ul>
-										</div>
-									</div>
-									<div class="col1">
-										<div class="h_nav">
-											<ul>
-												<li><a href="/home/products">Alpaca</a></li>
-												<li><a href="/home/products">Cashmere</a></li>
-												<li><a href="/home/products">Cotton</a></li>
-												<li><a href="/home/products">Pima Cotton</a></li>
-												<li><a href="/home/products">Silk </a></li>
-
-											</ul>
-										</div>
-									</div>
-									<div class="col1">
->>>>>>> master
 										<div class="h_nav">
 											<ul>
 												<li><a href="/home/products">Bedskirt</a></li>
@@ -158,33 +105,6 @@
 
 											</ul>
 										</div>
-<<<<<<< HEAD
-=======
-									</div>
-									<div class="col1">
-										<div class="h_nav">
-											<ul>
-												<li><a href="/home/products">Alpaca</a></li>
-												<li><a href="/home/products">Cashmere</a></li>
-												<li><a href="/home/products">Modal</a></li>
-												<li><a href="/home/products">Pima Cotton</a></li>
-												<li><a href="/home/products">Silk </a></li>
-
-											</ul>
-										</div>
-									</div>
-									<div class="col1">
-										<div class="h_nav">
-
-											<ul>
-												<li><a href="/home/products">Bedskirt</a></li>
-												<li><a href="/home/products">Blanket/Throw</a></li>
-												<li><a href="/home/products">Mattress Topper</a></li>
-												<li><a href="/home/products">Pillow</a></li>
-												<li><a href="/home/products">Pillow Protector</a></li>
-											</ul>
-										</div>
->>>>>>> master
 									</div>
 									
 								</div>

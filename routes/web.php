@@ -24,6 +24,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 /*Home*/
 Route::get('/home', 'Pages\HomeController@index');
+Route::get('/home/{id}', 'Pages\HomeController@show');
 
 /*Contact*/
 Route::get('/home/contact', 'Pages\ContactController@index');

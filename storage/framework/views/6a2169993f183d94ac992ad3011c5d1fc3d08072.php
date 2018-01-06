@@ -21,6 +21,7 @@
 
 				<script>$(document).ready(function(c) {
 					$('.close1').on('click', function(c){
+						window.location="/home/1"
 						$('.cart-header').fadeOut('slow', function(c){
 							$('.cart-header').remove();
 						});

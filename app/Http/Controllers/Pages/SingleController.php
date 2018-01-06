@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Pages;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Item;
+use TCG\Voyager\Models\Category;
 
 class SingleController extends Controller
 {
@@ -13,15 +14,12 @@ class SingleController extends Controller
     	return view('pages/single');
     }
 
-<<<<<<< HEAD
     public function show($id)
     {
       $item = Item::find($id);
-    	return view('pages/single', ['item'=>$item]);
-=======
-    public function show($id){
-    	$blogs = Item::find($id);
-    	return view('pages/single', ['blogs' => $blogs]);
->>>>>>> master
+      // $category = Item::select('kategori')->where('id',$item->id)->first()->get();
+      $others = Item::where('kategori',$item->kategori)->where('id','<>',$item->id)->get();
+      // dd($others);
+    	return view('pages/single', ['item'=>$item, 'others'=>$others]);
     }
 }
