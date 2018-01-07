@@ -21,7 +21,8 @@ class SingleController extends Controller
       // $category = Item::select('kategori')->where('id',$item->id)->first()->get();
       $others = Item::where('kategori',$item->kategori)->where('id','<>',$item->id)->get();
       $images = Image::where('id_barang',$item->id)->first();
-      // dd($gambar);
+      // dd($others);
+
     	return view('pages/single', ['item'=>$item, 'others'=>$others, 'images'=>$images]);
     }
 }

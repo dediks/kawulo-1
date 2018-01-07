@@ -135,7 +135,7 @@
 					</div>
 				</a>
 				<p><a href="/home/single/{{$item->id}}">{{$item->nama_barang}}</a></p>
-				<a href="/home/cart/add/{{$item->id}}" class="item_add"><p class="number item_price"><i> </i>{{$item->harga}}</p></a>
+				<a href="/home/cart/add/{{$item->id}}" class="item_add"><p class="number item_price"><i> </i>Rp. {{number_format($item->harga)}}</p></a>
 			</div>
 		@endforeach
 		<!-- <div class="col-md-3 grid-top simpleCart_shelfItem">

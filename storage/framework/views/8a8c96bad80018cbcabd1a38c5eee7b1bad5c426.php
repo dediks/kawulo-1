@@ -125,7 +125,7 @@
 					</div>
 				</a>
 				<p><a href="/home/single/<?php echo e($item->id); ?>"><?php echo e($item->nama_barang); ?></a></p>
-				<a href="/home/cart/add/<?php echo e($item->id); ?>" class="item_add"><p class="number item_price"><i> </i><?php echo e($item->harga); ?></p></a>
+				<a href="/home/cart/add/<?php echo e($item->id); ?>" class="item_add"><p class="number item_price"><i> </i>Rp. <?php echo e(number_format($item->harga)); ?></p></a>
 			</div>
 		<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		<!-- <div class="col-md-3 grid-top simpleCart_shelfItem">

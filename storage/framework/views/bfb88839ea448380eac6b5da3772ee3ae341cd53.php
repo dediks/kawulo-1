@@ -32,7 +32,7 @@
 						</div>
 						<p class="tun"><span><?php echo e(strtoupper($item->nama_barang)); ?></span><br>stok yang tersedia : <?php echo e($item->stock); ?></p>
 						<div class="ca-rt">
-							<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. <?php echo e($item->harga); ?></p></a>
+							<a href="/home/cart/add/<?php echo e($item->id); ?>" class="item_add"><p class="number item_price"><i> </i>Rp. <?php echo e(number_format($item->harga)); ?></p></a>
 						</div>
 						<div class="clearfix"></div>
 					</div>

@@ -76,7 +76,7 @@ $(window).load(function() {
 			<div class="clearfix"> </div>
 		</div>
 
-		<h5 class="item_price">Rp. {{ $item->harga }}</h5>
+		<h5 class="item_price">Rp. {{ number_format($item->harga) }}</h5>
 		<p>{{ $item->deskripsi }} </p>
 <a href="/home/cart/add/{{$item->id}}" class="add-cart item_add" onclick="refreshPage()">MASUKKAN KERANJANG</a>
 
@@ -98,7 +98,7 @@ $(window).load(function() {
 			</div>
 			<p class="tun"><span>{{$other->nama_barang}}</span><br>stock yang tersedia : {{$other->stock}}</p>
 			<div class="ca-rt">
-				<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. {{$other->harga}}</p></a>
+				<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. {{ number_format($other->harga) }}</p></a>
 			</div>
 		</div>
 	@endforeach

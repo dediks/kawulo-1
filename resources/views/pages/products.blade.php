@@ -34,7 +34,7 @@
 						</div>
 						<p class="tun"><span>{{strtoupper($item->nama_barang)}}</span><br>stok yang tersedia : {{$item->stock}}</p>
 						<div class="ca-rt">
-							<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. {{$item->harga}}</p></a>
+							<a href="/home/cart/add/{{$item->id}}" class="item_add"><p class="number item_price"><i> </i>Rp. {{ number_format($item->harga) }}</p></a>
 						</div>
 						<div class="clearfix"></div>
 					</div>

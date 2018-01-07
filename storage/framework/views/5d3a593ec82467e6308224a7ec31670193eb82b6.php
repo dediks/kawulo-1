@@ -63,7 +63,7 @@ $(window).load(function() {
 			<div class="clearfix"> </div>
 		</div>
 
-		<h5 class="item_price">Rp. <?php echo e($item->harga); ?></h5>
+		<h5 class="item_price">Rp. <?php echo e(number_format($item->harga)); ?></h5>
 		<p><?php echo e($item->deskripsi); ?> </p>
 <a href="/home/cart/add/<?php echo e($item->id); ?>" class="add-cart item_add" onclick="refreshPage()">MASUKKAN KERANJANG</a>
 
@@ -85,7 +85,7 @@ $(window).load(function() {
 			</div>
 			<p class="tun"><span><?php echo e($other->nama_barang); ?></span><br>stock yang tersedia : <?php echo e($other->stock); ?></p>
 			<div class="ca-rt">
-				<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. <?php echo e($other->harga); ?></p></a>
+				<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. <?php echo e(number_format($other->harga)); ?></p></a>
 			</div>
 		</div>
 	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

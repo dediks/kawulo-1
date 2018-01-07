@@ -33,7 +33,7 @@
 						<div class="cart box_1">
 							<a href="/home/checkout">
 								<h3> <div class="total">
-									<span>Rp. <?php echo e($data['total']); ?></span> </div>
+									<span>Rp. <?php echo e(number_format($data['total'])); ?></span> </div>
 									<img src="<?php echo e(url('/images/cart.png')); ?>" alt=""/></h3>
 								</a>
 								<p><a href="/home/cart/clear" class="simpleCart_empty">Kosongkan Keranjang</a></p>
