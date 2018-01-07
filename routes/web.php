@@ -20,13 +20,34 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-/*Pages*/
+// Route::get('/home/single', 'Pages\SingleController@index');
+
+/*Home*/
 Route::get('/home', 'Pages\HomeController@index');
-Route::get('/home/checkout', 'Pages\CheckoutController@index');
+
+/*Contact*/
 Route::get('/home/contact', 'Pages\ContactController@index');
-Route::get('/home/login', 'Pages\LoginController@index');
-Route::get('/home/products', 'Pages\ProductsController@index');
-Route::get('/home/register', 'Pages\RegisterController@index');
-Route::get('/home/single', 'Pages\SingleController@index');
+
+/*Checkout*/
+Route::get('/home/checkout', 'Pages\CheckoutController@index');
+
+/*Single Product*/
+Route::get('/home/single/{id}', 'Pages\SingleController@show')->name('single');
+
+/*payment*/
 Route::get('/home/payment', 'Pages\PaymentController@index');
-/*Pages*/
+
+/*Login n Register*/
+Route::get('/home/login', 'Pages\LoginController@index')->name('login');
+Route::get('/home/register', 'Pages\RegisterController@index');
+
+/*Products*/
+Route::get('/home/products', 'Pages\ProductsController@index');
+Route::get('/home/products/{room}/{category}', 'Pages\ProductsController@show');
+
+/*Cart*/
+Route::get('/home/cart/add/{id}', 'Records\CartController@show');
+Route::get('/home/cart/clear', 'Records\CartController@clear');
+
+Route::post('/send', 'Pages\ContactController@add');
+Route::post('/pay', 'Pages\PaymentController@pay');

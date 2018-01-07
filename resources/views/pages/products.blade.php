@@ -1,4 +1,4 @@
-@extends('layouts.master') 
+@extends('layouts.master')
 
 <!DOCTYPE html>
 <html>
@@ -14,74 +14,37 @@
 		</div>
 		@stop
 	<!-- grow -->
-	
+
 		@section('content')
 		<div class="pro-du">
 		<div class="container">
 			<div class="col-md-9 product1">
-				<div class=" bottom-product">
+
+				@foreach ($items as $key => $item)
+				@if(($key+1)%2==1)
+					<div class=" bottom-product">
+				@endif
 					<div class="col-md-6 bottom-cd simpleCart_shelfItem">
 						<div class="product-at ">
-							<a href="/home/single"><img class="img-responsive" src="{{url('images/pi3.jpg')}}" alt="">
+							<a href="/home/single/{{$item->id}}"><img class="img-responsive" src="{{url('storage/'.$item->gambar)}}" alt="">
 							<div class="pro-grid">
-										<span class="buy-in">Buy Now</span>
+										<span class="buy-in">BELI SEKARANG</span>
 							</div>
-						</a>	
+						</a>
 						</div>
-						<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+						<p class="tun"><span>{{strtoupper($item->nama_barang)}}</span><br>stok yang tersedia : {{$item->stock}}</p>
 						<div class="ca-rt">
-							<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.400.000</p></a>				
+							<a href="/home/cart/add/{{$item->id}}" class="item_add"><p class="number item_price"><i> </i>Rp. {{ number_format($item->harga) }}</p></a>
 						</div>
 						<div class="clearfix"></div>
 					</div>
-					<div class="col-md-6 bottom-cd simpleCart_shelfItem">
-						<div class="product-at ">
-							<a href="/home/single"><img class="img-responsive" src="{{url('images/pi1.jpg')}}" alt="">
-							<div class="pro-grid">
-										<span class="buy-in">Buy Now</span>
+						@if(($key+1)%2==0)
+								<div class="clearfix"> </div>
 							</div>
-						</a>	
-						</div>
-						<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-						<div class="ca-rt">
-							<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.400.000</p></a>				
-						</div>
-						<div class="clearfix"></div>					
-					</div>
-						<div class="clearfix"> </div>
+						@endif
+				@endforeach
 				</div>
-				<div class=" bottom-product">
-					<div class="col-md-6 bottom-cd simpleCart_shelfItem">
-						<div class="product-at ">
-							<a href="/home/single"><img class="img-responsive" src="{{url('images/pi5.jpg')}}" alt="">
-							<div class="pro-grid">
-										<span class="buy-in">Buy Now</span>
-							</div>
-						</a>	
-						</div>
-						<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-						<div class="ca-rt">
-							<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.400.000</p></a>				
-						</div>
-						<div class="clearfix"></div>					
-					</div>
-					<div class="col-md-6 bottom-cd simpleCart_shelfItem">
-						<div class="product-at ">
-							<a href="/home/single"><img class="img-responsive" src="{{url('images/pi.jpg')}}" alt="">
-							<div class="pro-grid">
-										<span class="buy-in">Buy Now</span>
-							</div>
-						</a>	
-						</div>
-						<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-						<div class="ca-rt">
-							<a href="#" class="item_add"><p class="number item_price"><i> </i>Rp. 5.400.000</p></a>				
-						</div>
-						<div class="clearfix"></div>					
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				</div>
+
 			<div class="col-md-3 prod-rgt">
 				<div class=" pro-tp">
 					<div class="pl-lft">

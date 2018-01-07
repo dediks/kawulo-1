@@ -10,7 +10,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-    	$items = Item::all();
+      $max = Item::count();
+      $items = Item::where('id','>',$max-4)->get();
     	//dd($items);
     	return view('pages/home',['items' => $items]);
     }

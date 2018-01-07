@@ -6,7 +6,7 @@
 						<li><a href="<?php echo e(url('twitter.com')); ?>"><i class="twiter"> </i></a></li>
 						<li><a href="<?php echo e(url('instagram.com')); ?>"><i class="inst"> </i></a></li>
 						<li><a href="<?php echo e(url('google.com')); ?>"><i class="goog"> </i></a></li>
-						<div class="clearfix"></div>	
+						<div class="clearfix"></div>
 					</ul>
 				</div>
 				<div class="header-left">
@@ -33,10 +33,10 @@
 						<div class="cart box_1">
 							<a href="/home/checkout">
 								<h3> <div class="total">
-									<span class="simpleCart_total"></span> </div>
+									<span>Rp. <?php echo e(number_format($data['total'])); ?></span> </div>
 									<img src="<?php echo e(url('/images/cart.png')); ?>" alt=""/></h3>
 								</a>
-								<p><a href="javascript:;" class="simpleCart_empty">Kosongkan Keranjang</a></p>
+								<p><a href="/home/cart/clear" class="simpleCart_empty">Kosongkan Keranjang</a></p>
 
 							</div>
 						</div>
@@ -53,51 +53,29 @@
 					<div class=" h_menu4">
 						<ul class="memenu skyblue">
 							<!--menu ruang keluarga-->
-							<li><a class="color8" href="#">RUANG TAMU</a><div class="mepanel">
+							<li><a class="color8"><?php echo e(strtoupper($data['rooms'][1]->nama)); ?></a><div class="mepanel">
 								<div class="row">
-									<div class="col1">
+									<div class="col1" style="width : 100%">
 										<div class="h_nav">
 											<ul>
-												<li><a href="/home/products">Bedskirt</a></li>
+												<li><a href="/home/products/<?php echo e($data['rooms'][1]->id); ?>/<?php echo e($data['categories'][1]->id); ?>"><?php echo e($data['categories'][1]->name); ?></a></li>
 												<li><a href="/home/products">Blanket/Throw</a></li>
 												<li><a href="/home/products">Mattress Topper</a></li>
 												<li><a href="/home/products">Pillow</a></li>
 												<li><a href="/home/products">Pillow Protector</a></li>
 
-											</ul>	
-										</div>							
+											</ul>
+										</div>
 									</div>
-									<div class="col1">
-										<div class="h_nav">
-											<ul>
-												<li><a href="/home/products">Alpaca</a></li>
-												<li><a href="/home/products">Cashmere</a></li>
-												<li><a href="/home/products">Cotton</a></li>
-												<li><a href="/home/products">Pima Cotton</a></li>
-												<li><a href="/home/products">Silk </a></li>
-
-											</ul>	
-										</div>							
-									</div>
-									<div class="col1">
-										<div class="h_nav">
-											<ul>
-												<li><a href="/home/products">Bedskirt</a></li>
-												<li><a href="/home/products">Blanket/Throw</a></li>
-												<li><a href="/home/products">Mattress Topper</a></li>
-												<li><a href="/home/products">Pillow</a></li>
-												<li><a href="/home/products">Pillow Protector</a></li>
-											</ul>	
-										</div>												
-									</div>
+									
 								</div>
 							</div>
-						</li>	
+						</li>
 						<!--menu dapur-->
-						<li><a class="color1" href="#">DAPUR</a>
+						<li><a class="color1"><?php echo e(strtoupper($data['rooms'][2]->nama)); ?></a>
 							<div class="mepanel">
 								<div class="row">
-									<div class="col1">
+									<div class="col1" style="width : 100%">
 										<div class="h_nav">
 											<ul>
 												<li><a href="/home/products">Bedskirt</a></li>
@@ -105,41 +83,18 @@
 												<li><a href="/home/products">Mattress Topper</a></li>
 												<li><a href="/home/products">Pillow</a></li>
 												<li><a href="/home/products">Pillow Protector</a></li>
-
-											</ul>	
-										</div>							
+											</ul>
+										</div>
 									</div>
-									<div class="col1">
-										<div class="h_nav">
-											<ul>
-												<li><a href="/home/products">Alpaca</a></li>
-												<li><a href="/home/products">Cashmere</a></li>
-												<li><a href="/home/products">Cotton</a></li>
-												<li><a href="/home/products">Pima Cotton</a></li>
-												<li><a href="/home/products">Silk </a></li>
-
-											</ul>	
-										</div>							
-									</div>
-									<div class="col1">
-										<div class="h_nav">
-											<ul>
-												<li><a href="/home/products">Bedskirt</a></li>
-												<li><a href="/home/products">Blanket/Throw</a></li>
-												<li><a href="/home/products">Mattress Topper</a></li>
-												<li><a href="/home/products">Pillow</a></li>
-												<li><a href="/home/products">Pillow Protector</a></li>
-											</ul>	
-										</div>												
-									</div>
+									
 								</div>
 							</div>
 						</li>
 						<!--menu kantor-->
-						<li class="grid"><a class="color2" href="#">KANTOR</a>
+						<li class="grid"><a class="color2" ><?php echo e(strtoupper($data['rooms'][3]->nama)); ?></a>
 							<div class="mepanel">
 								<div class="row">
-									<div class="col1">
+									<div class="col1" style="width:100%">
 										<div class="h_nav">
 											<ul>
 												<li><a href="/home/products">Bedskirt</a></li>
@@ -148,41 +103,18 @@
 												<li><a href="/home/products">Pillow</a></li>
 												<li><a href="/home/products">Pillow Protector</a></li>
 
-											</ul>	
-										</div>								
+											</ul>
+										</div>
 									</div>
-									<div class="col1">
-										<div class="h_nav">
-											<ul>
-												<li><a href="/home/products">Alpaca</a></li>
-												<li><a href="/home/products">Cashmere</a></li>
-												<li><a href="/home/products">Modal</a></li>
-												<li><a href="/home/products">Pima Cotton</a></li>
-												<li><a href="/home/products">Silk </a></li>
-
-											</ul>		
-										</div>							
-									</div>
-									<div class="col1">
-										<div class="h_nav">
-
-											<ul>
-												<li><a href="/home/products">Bedskirt</a></li>
-												<li><a href="/home/products">Blanket/Throw</a></li>
-												<li><a href="/home/products">Mattress Topper</a></li>
-												<li><a href="/home/products">Pillow</a></li>
-												<li><a href="/home/products">Pillow Protector</a></li>
-											</ul>	
-										</div>												
-									</div>
+									
 								</div>
 							</div>
 						</li>
 						<li><a class="color6" href="/home/contact">PESAN</a></li>
-						<li><a class="color4" href="/home/login">MASUK</a></li>				
-					</ul> 
+						<li><a class="color4" href="/home/login">MASUK</a></li>
+					</ul>
 				</div>
-				
+
 				<div class="clearfix"> </div>
 			</div>
 		</div>
