@@ -23,7 +23,13 @@
 					<div class="col-md-7 single-top">
 						<div class="flexslider">
 							<ul class="slides">
-								<li data-thumb="{{url('storage/'.$item->gambar)}}">
+
+								@foreach(json_decode($images->gambar, true) as $image)
+									<li data-thumb="{{url('storage/'.$image)}}">
+										<div class="thumb-image"> <img src="{{url('storage/'.$image)}}" data-imagezoom="true" class="img-responsive"> </div>
+									</li>
+								@endforeach
+								{{-- <li data-thumb="{{url('storage/'.$item->gambar)}}">
 									<div class="thumb-image"> <img src="{{url('storage/'.$item->gambar)}}" data-imagezoom="true" class="img-responsive"> </div>
 								</li>
 								<li data-thumb="{{url('storage/'.$item->gambar)}}">
@@ -34,7 +40,9 @@
 								</li>
 								<li data-thumb="{{url('storage/'.$item->gambar)}}">
 									<div class="thumb-image"> <img src="{{url('storage/'.$item->gambar)}}" data-imagezoom="true" class="img-responsive"> </div>
-								</li>
+								</li> --}}
+
+
 							</ul>
 						</div>
 

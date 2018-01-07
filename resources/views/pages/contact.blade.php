@@ -21,17 +21,44 @@
 			<div class="contact-form">
 
 				<div class="col-md-8 contact-grid">
-					<form action="#" method="post">
-						<input type="text" value="Nama" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
 
-						<input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
-						<input type="text" value="Subjek" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
+					<form action="/send" method="post">
+                @if ($errors->any())
+                    <div class="alert alert-danger" role="alert">
+                        Please fix the following errors
+                    </div>
+                @endif
 
-						<textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Pesan</textarea>
-						<div class="send">
-							<input type="submit" value="Kirim">
-						</div>
-					</form>
+                {!! csrf_field() !!}
+                <div class="form-group{{ $errors->has('nama') ? ' has-error' : '' }}">
+                    <input type="text"  id="nama" name="nama" placeholder="Nama" value="{{ $data['user']->name }}">
+                    @if($errors->has('nama'))
+                        <span class="help-block">{{ $errors->first('nama') }}</span>
+                    @endif
+                </div>
+                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <input type="text" id="email" name="email" placeholder="Email" value="{{ $data['user']->email }}">
+                    @if($errors->has('email'))
+                        <span class="help-block">{{ $errors->first('email') }}</span>
+                    @endif
+                </div>
+								<div class="form-group{{ $errors->has('subjek') ? ' has-error' : '' }}">
+                    <input type="text" id="subjek" name="subjek" placeholder="Subjek" value="{{ old('subjek') }}">
+                    @if($errors->has('subjek'))
+                        <span class="help-block">{{ $errors->first('subjek') }}</span>
+                    @endif
+                </div>
+                <div class="form-group{{ $errors->has('pesan') ? ' has-error' : '' }}">
+                    <textarea id="pesan" name="pesan" placeholder="Pesan">{{ old('pesan') }}</textarea>
+                    @if($errors->has('pesan'))
+                        <span class="help-block">{{ $errors->first('pesan') }}</span>
+                    @endif
+                </div>
+								<div class="send">
+									<input type="submit" value="Kirim">
+								</div>
+            </form>
+
 				</div>
 				<div class="col-md-4 contact-in">
 

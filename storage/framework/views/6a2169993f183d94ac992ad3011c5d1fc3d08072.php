@@ -21,7 +21,7 @@
 
 				<script>$(document).ready(function(c) {
 					$('.close1').on('click', function(c){
-						window.location="/home/1"
+						window.location="/home/1";
 						$('.cart-header').fadeOut('slow', function(c){
 							$('.cart-header').remove();
 						});
@@ -103,12 +103,6 @@
 
 		<div class="clearfix"></div>
 		<a class="order" href="/home/payment">Bayar</a>
-		<div class="total-item">
-			<h3>OPSI</h3>
-			<h4>KUPON</h4>
-			<a class="cpns" href="#">Masukkan Kupon</a>
-			<p><a href="/home/login">Masuk</a> untuk menggunakan kupon</p>
-		</div>
 	</div>
 
 	<div class="clearfix">

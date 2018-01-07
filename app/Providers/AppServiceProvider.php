@@ -41,6 +41,7 @@ class AppServiceProvider extends ServiceProvider
         );
 
         $data = array(
+          'user'=>$user,
           'total'=>$total,
           'ongkir'=>0.07*$total,
           'diskon'=>0.09*$total,

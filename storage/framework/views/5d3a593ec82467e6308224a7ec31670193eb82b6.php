@@ -21,18 +21,15 @@
 					<div class="col-md-7 single-top">
 						<div class="flexslider">
 							<ul class="slides">
-								<li data-thumb="<?php echo e(url('storage/'.$item->gambar)); ?>">
-									<div class="thumb-image"> <img src="<?php echo e(url('storage/'.$item->gambar)); ?>" data-imagezoom="true" class="img-responsive"> </div>
-								</li>
-								<li data-thumb="<?php echo e(url('storage/'.$item->gambar)); ?>">
-									<div class="thumb-image"> <img src="<?php echo e(url('storage/'.$item->gambar)); ?>" data-imagezoom="true" class="img-responsive"> </div>
-								</li>
-								<li data-thumb="<?php echo e(url('storage/'.$item->gambar)); ?>">
-									<div class="thumb-image"> <img src="<?php echo e(url('storage/'.$item->gambar)); ?>" data-imagezoom="true" class="img-responsive"> </div>
-								</li>
-								<li data-thumb="<?php echo e(url('storage/'.$item->gambar)); ?>">
-									<div class="thumb-image"> <img src="<?php echo e(url('storage/'.$item->gambar)); ?>" data-imagezoom="true" class="img-responsive"> </div>
-								</li>
+
+								<?php $__currentLoopData = json_decode($images->gambar, true); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $image): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+									<li data-thumb="<?php echo e(url('storage/'.$image)); ?>">
+										<div class="thumb-image"> <img src="<?php echo e(url('storage/'.$image)); ?>" data-imagezoom="true" class="img-responsive"> </div>
+									</li>
+								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								
+
+
 							</ul>
 						</div>
 

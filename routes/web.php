@@ -24,7 +24,6 @@ Route::group(['prefix' => 'admin'], function () {
 
 /*Home*/
 Route::get('/home', 'Pages\HomeController@index');
-Route::get('/home/{id}', 'Pages\HomeController@show');
 
 /*Contact*/
 Route::get('/home/contact', 'Pages\ContactController@index');
@@ -49,3 +48,6 @@ Route::get('/home/products/{room}/{category}', 'Pages\ProductsController@show');
 /*Cart*/
 Route::get('/home/cart/add/{id}', 'Records\CartController@show');
 Route::get('/home/cart/clear', 'Records\CartController@clear');
+
+Route::post('/send', 'Pages\ContactController@add');
+Route::post('/pay', 'Pages\PaymentController@pay');

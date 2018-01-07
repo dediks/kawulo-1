@@ -15,9 +15,4 @@ class HomeController extends Controller
     	//dd($items);
     	return view('pages/home',['items' => $items]);
     }
-
-    public function show($id)
-    {
-      return redirect()->back();
-    }
 }

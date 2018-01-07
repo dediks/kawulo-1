@@ -19,17 +19,45 @@
 			<div class="contact-form">
 
 				<div class="col-md-8 contact-grid">
-					<form action="#" method="post">
-						<input type="text" value="Nama" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
 
-						<input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
-						<input type="text" value="Subjek" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
+					<form action="/send" method="post">
+                <?php if($errors->any()): ?>
+                    <div class="alert alert-danger" role="alert">
+                        Please fix the following errors
+                    </div>
+                <?php endif; ?>
 
-						<textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Pesan</textarea>
-						<div class="send">
-							<input type="submit" value="Kirim">
-						</div>
-					</form>
+                <?php echo csrf_field(); ?>
+
+                <div class="form-group<?php echo e($errors->has('nama') ? ' has-error' : ''); ?>">
+                    <input type="text"  id="nama" name="nama" placeholder="Nama" value="<?php echo e($data['user']->name); ?>">
+                    <?php if($errors->has('nama')): ?>
+                        <span class="help-block"><?php echo e($errors->first('nama')); ?></span>
+                    <?php endif; ?>
+                </div>
+                <div class="form-group<?php echo e($errors->has('email') ? ' has-error' : ''); ?>">
+                    <input type="text" id="email" name="email" placeholder="Email" value="<?php echo e($data['user']->email); ?>">
+                    <?php if($errors->has('email')): ?>
+                        <span class="help-block"><?php echo e($errors->first('email')); ?></span>
+                    <?php endif; ?>
+                </div>
+								<div class="form-group<?php echo e($errors->has('subjek') ? ' has-error' : ''); ?>">
+                    <input type="text" id="subjek" name="subjek" placeholder="Subjek" value="<?php echo e(old('subjek')); ?>">
+                    <?php if($errors->has('subjek')): ?>
+                        <span class="help-block"><?php echo e($errors->first('subjek')); ?></span>
+                    <?php endif; ?>
+                </div>
+                <div class="form-group<?php echo e($errors->has('pesan') ? ' has-error' : ''); ?>">
+                    <textarea id="pesan" name="pesan" placeholder="Pesan"><?php echo e(old('pesan')); ?></textarea>
+                    <?php if($errors->has('pesan')): ?>
+                        <span class="help-block"><?php echo e($errors->first('pesan')); ?></span>
+                    <?php endif; ?>
+                </div>
+								<div class="send">
+									<input type="submit" value="Kirim">
+								</div>
+            </form>
+
 				</div>
 				<div class="col-md-4 contact-in">
 
