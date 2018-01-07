@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 05, 2018 at 03:47 PM
+-- Generation Time: Jan 07, 2018 at 08:50 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -44,7 +44,9 @@ CREATE TABLE `baskets` (
 --
 
 INSERT INTO `baskets` (`id`, `id_user`, `id_barang`, `banyak`, `total`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(3, 1, 1, 1, 4500000, '2018-01-05 07:32:46', '2018-01-05 07:32:46', NULL);
+(10, 1, 3, 1, 1200000, '2018-01-07 00:15:12', '2018-01-07 00:15:12', NULL),
+(11, 1, 1, 1, 4500000, '2018-01-07 00:17:59', '2018-01-07 00:17:59', NULL),
+(12, 1, 2, 1, 1000000, '2018-01-07 00:36:47', '2018-01-07 00:36:47', NULL);
 
 -- --------------------------------------------------------
 
@@ -69,6 +71,29 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `parent_id`, `order`, `name`, `slug`, `created_at`, `updated_at`) VALUES
 (1, NULL, 1, 'Category 1', 'category-1', '2017-12-27 09:23:59', '2017-12-27 09:23:59'),
 (2, NULL, 1, 'Category 2', 'category-2', '2017-12-27 09:23:59', '2017-12-27 09:23:59');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `nama` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `subjek` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pesan` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `created_at`, `updated_at`, `nama`, `email`, `subjek`, `pesan`) VALUES
+(2, '2018-01-06 18:27:20', '2018-01-06 18:27:20', 'Dino Puguh Putro Sembodo', 'puguh@gmail.com', 'Komplain', 'Webnya terlalu bagus');
 
 -- --------------------------------------------------------
 
@@ -151,7 +176,6 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (52, 1, 'featured', 'checkbox', 'featured', 1, 1, 1, 1, 1, 1, '', 15),
 (53, 3, 'role_id', 'text', 'role_id', 0, 1, 1, 1, 1, 1, NULL, 9),
 (61, 3, 'alamat', 'text_area', 'Alamat', 1, 1, 1, 1, 1, 1, NULL, 10),
-(62, 3, 'id_transaksi', 'number', 'Id Transaksi', 0, 1, 1, 1, 0, 1, NULL, 11),
 (63, 8, 'id', 'number', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
 (64, 8, 'id_user', 'number', 'Id User', 0, 1, 1, 1, 0, 1, NULL, 2),
 (65, 8, 'id_barang', 'number', 'Id Barang', 0, 1, 1, 1, 0, 1, NULL, 3),
@@ -161,13 +185,8 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (69, 8, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 7),
 (70, 9, 'id', 'number', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
 (71, 9, 'id_user', 'number', 'Id User', 0, 1, 1, 1, 0, 1, NULL, 2),
-(72, 9, 'id_keranjang', 'number', 'Id Keranjang', 0, 1, 1, 1, 0, 1, NULL, 3),
-(73, 9, 'total', 'number', 'Total', 0, 1, 1, 1, 0, 1, NULL, 4),
-(74, 9, 'tgl_pesan', 'date', 'Tgl Pesan', 0, 1, 1, 1, 0, 1, NULL, 5),
-(75, 9, 'tgl_kirim', 'date', 'Tgl Kirim', 0, 1, 1, 1, 0, 1, NULL, 6),
 (76, 9, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 7),
 (77, 9, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 8),
-(78, 3, 'user_hasmany_basket_relationship', 'relationship', 'baskets', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Basket\",\"table\":\"baskets\",\"type\":\"hasMany\",\"column\":\"id_user\",\"key\":\"id\",\"label\":\"id_user\",\"pivot_table\":\"baskets\",\"pivot\":\"0\"}', 12),
 (79, 10, 'id', 'number', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
 (80, 10, 'nama_barang', 'text', 'Nama Barang', 0, 1, 1, 1, 1, 1, NULL, 2),
 (81, 10, 'gambar', 'image', 'Gambar', 0, 1, 1, 1, 1, 1, NULL, 3),
@@ -179,13 +198,31 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (88, 8, 'deleted_at', 'timestamp', 'Deleted At', 0, 1, 1, 1, 1, 1, NULL, 8),
 (89, 10, 'item_hasone_category_relationship', 'relationship', 'categories', 0, 1, 1, 1, 1, 1, '{\"model\":\"TCG\\\\Voyager\\\\Models\\\\Category\",\"table\":\"categories\",\"type\":\"belongsTo\",\"column\":\"kategori\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"baskets\",\"pivot\":\"0\"}', 10),
 (90, 10, 'kategori', 'text', 'Kategori', 0, 1, 1, 1, 1, 1, NULL, 9),
-(96, 12, 'id', 'number', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
-(97, 12, 'nama', 'text', 'Nama', 0, 1, 1, 1, 1, 1, NULL, 2),
-(98, 12, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 3),
-(99, 12, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 4),
-(100, 12, 'deleted_at', 'timestamp', 'Deleted At', 0, 1, 1, 1, 1, 1, NULL, 5),
 (101, 10, 'item_belongsto_room_relationship', 'relationship', 'rooms', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Room\",\"table\":\"rooms\",\"type\":\"belongsTo\",\"column\":\"ruang\",\"key\":\"id\",\"label\":\"nama\",\"pivot_table\":\"baskets\",\"pivot\":\"0\"}', 11),
-(102, 10, 'ruang', 'text', 'Ruang', 0, 1, 1, 1, 1, 1, NULL, 10);
+(102, 10, 'ruang', 'text', 'Ruang', 0, 1, 1, 1, 1, 1, NULL, 10),
+(103, 13, 'id', 'number', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(104, 13, 'id_barang', 'number', 'Id Barang', 0, 1, 1, 1, 1, 1, NULL, 2),
+(105, 13, 'gambar', 'multiple_images', 'Gambar', 0, 1, 1, 1, 1, 1, NULL, 3),
+(106, 13, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 4),
+(107, 13, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 5),
+(108, 14, 'id', 'number', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(112, 14, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 5),
+(113, 14, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 6),
+(114, 14, 'nama', 'text', 'Nama', 1, 1, 1, 1, 1, 1, NULL, 4),
+(115, 14, 'email', 'text', 'Email', 1, 1, 1, 1, 1, 1, NULL, 5),
+(116, 14, 'subjek', 'text', 'Subjek', 0, 1, 1, 1, 1, 1, NULL, 6),
+(117, 14, 'pesan', 'text_area', 'Pesan', 0, 1, 1, 1, 1, 1, NULL, 7),
+(118, 3, 'telp', 'text', 'Telp', 0, 1, 1, 1, 1, 1, NULL, 11),
+(119, 9, 'nama', 'text', 'Nama', 1, 1, 1, 1, 1, 1, NULL, 6),
+(120, 9, 'email', 'text', 'Email', 0, 1, 1, 1, 1, 1, NULL, 7),
+(121, 9, 'telp', 'text', 'Telp', 1, 1, 1, 1, 1, 1, NULL, 8),
+(122, 9, 'alamat', 'text_area', 'Alamat', 1, 1, 1, 1, 1, 1, NULL, 9),
+(123, 9, 'tgl_pesan', 'text', 'Tgl Pesan', 0, 1, 1, 1, 1, 1, NULL, 3),
+(124, 15, 'id', 'number', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(125, 15, 'nama', 'text', 'Nama', 0, 1, 1, 1, 1, 1, NULL, 2),
+(126, 15, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 3),
+(127, 15, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 4),
+(128, 15, 'deleted_at', 'timestamp', 'Deleted At', 0, 1, 1, 1, 1, 1, NULL, 5);
 
 -- --------------------------------------------------------
 
@@ -224,7 +261,30 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (8, 'baskets', 'baskets', 'Basket', 'Baskets', 'voyager-basket', 'App\\Basket', NULL, NULL, NULL, 1, 0, '2017-12-27 09:44:24', '2017-12-27 09:44:24'),
 (9, 'transactions', 'transactions', 'Transaction', 'Transactions', 'voyager-dollar', 'App\\Transaction', NULL, NULL, NULL, 1, 0, '2017-12-27 09:47:18', '2017-12-27 09:47:18'),
 (10, 'items', 'items', 'Item', 'Items', NULL, 'App\\Item', NULL, NULL, NULL, 1, 0, '2017-12-28 09:17:02', '2017-12-28 09:17:02'),
-(12, 'rooms', 'rooms', 'Room', 'Rooms', 'voyager-treasure', 'App\\Room', NULL, NULL, NULL, 1, 0, '2018-01-05 04:41:26', '2018-01-05 04:41:26');
+(13, 'images', 'images', 'Image', 'Images', 'voyager-photo', 'App\\Image', NULL, NULL, NULL, 1, 0, '2018-01-06 17:23:02', '2018-01-06 17:23:02'),
+(14, 'contacts', 'contacts', 'Contact', 'Contacts', 'voyager-bubble', 'App\\Contact', NULL, NULL, NULL, 1, 0, '2018-01-06 18:13:37', '2018-01-06 21:39:06'),
+(15, 'rooms', 'rooms', 'Room', 'Rooms', 'voyager-treasure', 'App\\Room', NULL, NULL, NULL, 1, 0, '2018-01-06 21:38:05', '2018-01-06 21:38:05');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `images`
+--
+
+CREATE TABLE `images` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `id_barang` int(11) DEFAULT NULL,
+  `gambar` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`id`, `id_barang`, `gambar`, `created_at`, `updated_at`) VALUES
+(1, 1, '[\"images\\/January2018\\/vr7dWWcNYYj3HuTIMJjN.jpg\",\"images\\/January2018\\/OnEoWWfIijnEUz2XHTAA.jpg\",\"images\\/January2018\\/Qp91tW8IeoDxSoVUo4mw.jpg\",\"images\\/January2018\\/pkOdYvTmT2UgkSZtts4P.jpg\"]', '2018-01-06 17:23:34', '2018-01-06 17:23:34');
 
 -- --------------------------------------------------------
 
@@ -250,8 +310,11 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`id`, `nama_barang`, `gambar`, `harga`, `deskripsi`, `created_at`, `updated_at`, `stock`, `kategori`, `ruang`) VALUES
-(1, 'Meja Belajar X201', 'items/December2017/tSMdakbUXrdsLrtlGPTz.jpg', 4500000, 'Meja belajar yang nyaman untuk anak-anak', '2017-12-27 09:29:00', '2018-01-05 07:32:46', 29, 2, 2),
-(2, 'Kursi Teras B809', 'items/December2017/1ekwdELWTVGC1hxt2uF8.jpg', 1000000, 'Kursi desain abad 20-an yang nyaman digunakan oleh berbagai macam usia', '2017-12-29 11:19:00', '2018-01-05 04:44:21', 45, 1, 1);
+(1, 'Meja Belajar X201', 'items/January2018/qcw8hUk1PTFF76Nx6wFa.jpg', 4500000, 'Meja belajar yang nyaman untuk anak-anak', '2017-12-27 09:29:00', '2018-01-07 00:17:59', 29, 2, 2),
+(2, 'Kursi Teras B809', 'items/January2018/j32zbSj5Nthw1rT7fAb5.jpg', 1000000, 'Kursi desain abad 20-an yang nyaman digunakan oleh berbagai macam usia', '2017-12-29 11:19:00', '2018-01-07 00:36:47', 44, 1, 1),
+(3, 'Meja aaaa', 'items/January2018/lrmgVSwCKFH0rHE1E3ha.jpg', 1200000, 'hwghfff', '2018-01-05 21:07:00', '2018-01-07 00:15:12', 3, 1, 1),
+(5, 'nfgfgffbbgvdvd', 'items/January2018/UGgGgkCOpGCvmPKmBA3K.jpg', 3453423131, 'dvdfvdsvs', '2018-01-05 21:09:00', '2018-01-06 22:19:36', 3, 1, 1),
+(6, 'Almari X098', 'items/January2018/pqRa8KiUsVlrhDnyhl1F.jpg', 3600000, 'Almari Baru', '2018-01-05 21:10:00', '2018-01-06 22:19:44', 9, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -301,22 +364,24 @@ CREATE TABLE `menu_items` (
 
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
 (1, 1, 'Dashboard', '', '_self', 'voyager-boat', NULL, NULL, 1, '2017-12-27 09:23:54', '2017-12-27 09:23:54', 'voyager.dashboard', NULL),
-(2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 9, '2017-12-27 09:23:54', '2018-01-05 04:43:02', 'voyager.media.index', NULL),
-(3, 1, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 10, '2017-12-27 09:23:54', '2018-01-05 04:43:03', 'voyager.posts.index', NULL),
+(2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 11, '2017-12-27 09:23:54', '2018-01-06 21:39:49', 'voyager.media.index', NULL),
+(3, 1, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 13, '2017-12-27 09:23:54', '2018-01-06 21:40:02', 'voyager.posts.index', NULL),
 (4, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 3, '2017-12-27 09:23:54', '2017-12-27 09:27:21', 'voyager.users.index', NULL),
-(5, 1, 'Categories', '', '_self', 'voyager-categories', NULL, NULL, 7, '2017-12-27 09:23:54', '2018-01-05 04:43:02', 'voyager.categories.index', NULL),
-(6, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 11, '2017-12-27 09:23:54', '2018-01-05 04:43:03', 'voyager.pages.index', NULL),
+(5, 1, 'Categories', '', '_self', 'voyager-categories', NULL, NULL, 6, '2017-12-27 09:23:54', '2018-01-06 21:39:55', 'voyager.categories.index', NULL),
+(6, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 14, '2017-12-27 09:23:54', '2018-01-06 21:40:02', 'voyager.pages.index', NULL),
 (7, 1, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 2, '2017-12-27 09:23:54', '2017-12-27 09:23:54', 'voyager.roles.index', NULL),
-(8, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 12, '2017-12-27 09:23:54', '2018-01-05 04:42:57', NULL, NULL),
+(8, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 12, '2017-12-27 09:23:54', '2018-01-06 21:40:02', NULL, NULL),
 (9, 1, 'Menu Builder', '', '_self', 'voyager-list', NULL, 8, 1, '2017-12-27 09:23:54', '2017-12-27 09:27:14', 'voyager.menus.index', NULL),
 (10, 1, 'Database', '', '_self', 'voyager-data', NULL, 8, 2, '2017-12-27 09:23:55', '2017-12-27 09:27:14', 'voyager.database.index', NULL),
 (11, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 8, 3, '2017-12-27 09:23:55', '2017-12-27 09:27:15', 'voyager.compass.index', NULL),
 (12, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 8, 4, '2017-12-27 09:23:55', '2017-12-27 09:27:15', 'voyager.hooks', NULL),
-(13, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 13, '2017-12-27 09:23:55', '2018-01-05 04:42:57', 'voyager.settings.index', NULL),
+(13, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 15, '2017-12-27 09:23:55', '2018-01-06 21:39:49', 'voyager.settings.index', NULL),
 (15, 1, 'Baskets', '/admin/baskets', '_self', 'voyager-basket', NULL, NULL, 5, '2017-12-27 09:44:25', '2017-12-28 09:17:23', NULL, NULL),
-(16, 1, 'Transactions', '/admin/transactions', '_self', 'voyager-dollar', NULL, NULL, 6, '2017-12-27 09:47:18', '2017-12-28 09:17:23', NULL, NULL),
+(16, 1, 'Transactions', '/admin/transactions', '_self', 'voyager-dollar', NULL, NULL, 10, '2017-12-27 09:47:18', '2018-01-06 21:39:55', NULL, NULL),
 (17, 1, 'Items', '/admin/items', '_self', 'voyager-diamond', NULL, NULL, 4, '2017-12-28 04:51:19', '2017-12-28 09:17:23', NULL, NULL),
-(18, 1, 'Rooms', '/admin/rooms', '_self', NULL, NULL, NULL, 8, '2018-01-05 04:37:14', '2018-01-05 04:43:02', NULL, NULL);
+(18, 1, 'Rooms', '/admin/rooms', '_self', NULL, NULL, NULL, 7, '2018-01-05 04:37:14', '2018-01-06 21:39:55', NULL, NULL),
+(19, 1, 'Images', '/admin/images', '_self', 'voyager-photo', NULL, NULL, 8, '2018-01-06 17:23:02', '2018-01-06 21:39:55', NULL, NULL),
+(20, 1, 'Contacts', '/admin/contacts', '_self', NULL, NULL, NULL, 9, '2018-01-06 18:13:37', '2018-01-06 21:39:55', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -473,11 +538,21 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (57, 'edit_items', 'items', '2017-12-28 09:17:02', '2017-12-28 09:17:02', NULL),
 (58, 'add_items', 'items', '2017-12-28 09:17:02', '2017-12-28 09:17:02', NULL),
 (59, 'delete_items', 'items', '2017-12-28 09:17:02', '2017-12-28 09:17:02', NULL),
-(65, 'browse_rooms', 'rooms', '2018-01-05 04:41:26', '2018-01-05 04:41:26', NULL),
-(66, 'read_rooms', 'rooms', '2018-01-05 04:41:26', '2018-01-05 04:41:26', NULL),
-(67, 'edit_rooms', 'rooms', '2018-01-05 04:41:26', '2018-01-05 04:41:26', NULL),
-(68, 'add_rooms', 'rooms', '2018-01-05 04:41:26', '2018-01-05 04:41:26', NULL),
-(69, 'delete_rooms', 'rooms', '2018-01-05 04:41:26', '2018-01-05 04:41:26', NULL);
+(70, 'browse_images', 'images', '2018-01-06 17:23:02', '2018-01-06 17:23:02', NULL),
+(71, 'read_images', 'images', '2018-01-06 17:23:02', '2018-01-06 17:23:02', NULL),
+(72, 'edit_images', 'images', '2018-01-06 17:23:02', '2018-01-06 17:23:02', NULL),
+(73, 'add_images', 'images', '2018-01-06 17:23:02', '2018-01-06 17:23:02', NULL),
+(74, 'delete_images', 'images', '2018-01-06 17:23:02', '2018-01-06 17:23:02', NULL),
+(75, 'browse_contacts', 'contacts', '2018-01-06 18:13:37', '2018-01-06 18:13:37', NULL),
+(76, 'read_contacts', 'contacts', '2018-01-06 18:13:37', '2018-01-06 18:13:37', NULL),
+(77, 'edit_contacts', 'contacts', '2018-01-06 18:13:37', '2018-01-06 18:13:37', NULL),
+(78, 'add_contacts', 'contacts', '2018-01-06 18:13:37', '2018-01-06 18:13:37', NULL),
+(79, 'delete_contacts', 'contacts', '2018-01-06 18:13:37', '2018-01-06 18:13:37', NULL),
+(80, 'browse_rooms', 'rooms', '2018-01-06 21:38:06', '2018-01-06 21:38:06', NULL),
+(81, 'read_rooms', 'rooms', '2018-01-06 21:38:06', '2018-01-06 21:38:06', NULL),
+(82, 'edit_rooms', 'rooms', '2018-01-06 21:38:06', '2018-01-06 21:38:06', NULL),
+(83, 'add_rooms', 'rooms', '2018-01-06 21:38:06', '2018-01-06 21:38:06', NULL),
+(84, 'delete_rooms', 'rooms', '2018-01-06 21:38:06', '2018-01-06 21:38:06', NULL);
 
 -- --------------------------------------------------------
 
@@ -560,11 +635,21 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (57, 1),
 (58, 1),
 (59, 1),
-(65, 1),
-(66, 1),
-(67, 1),
-(68, 1),
-(69, 1);
+(70, 1),
+(71, 1),
+(72, 1),
+(73, 1),
+(74, 1),
+(75, 1),
+(76, 1),
+(77, 1),
+(78, 1),
+(79, 1),
+(80, 1),
+(81, 1),
+(82, 1),
+(83, 1),
+(84, 1);
 
 -- --------------------------------------------------------
 
@@ -687,13 +772,21 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 CREATE TABLE `transactions` (
   `id` int(10) UNSIGNED NOT NULL,
   `id_user` int(11) DEFAULT NULL,
-  `id_keranjang` int(11) DEFAULT NULL,
-  `total` double DEFAULT NULL,
   `tgl_pesan` date DEFAULT NULL,
-  `tgl_kirim` date DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `nama` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `telp` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `alamat` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `transactions`
+--
+
+INSERT INTO `transactions` (`id`, `id_user`, `tgl_pesan`, `created_at`, `updated_at`, `nama`, `email`, `telp`, `alamat`) VALUES
+(3, 1, '2018-01-07', '2018-01-06 19:35:15', '2018-01-06 19:35:15', 'Dino Puguh', 'admin@admin.com', '085736976475', 'Munung Jatikalen Nganjuk');
 
 -- --------------------------------------------------------
 
@@ -764,16 +857,16 @@ CREATE TABLE `users` (
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `alamat` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `id_transaksi` int(11) DEFAULT NULL
+  `alamat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `password`, `remember_token`, `created_at`, `updated_at`, `alamat`, `id_transaksi`) VALUES
-(1, 1, 'Admin', 'admin@admin.com', 'users/default.png', '$2y$10$G.ev0tndXcxCjzr9IbDHbuuRHlaBRIhMg2RKhBRX7VjeSVy.G5xma', 'zlcg6bp2oOWtzdeTDIkBjYUZreH59chNKKXbns8UaqfmQ8mVc5oh7OtWLtYy', '2017-12-27 09:24:00', '2017-12-27 09:24:00', '', NULL);
+INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `password`, `remember_token`, `created_at`, `updated_at`, `alamat`, `telp`) VALUES
+(1, 1, 'Dino Puguh', 'admin@admin.com', 'users/default.png', '$2y$10$l9nXK9kj4qPHp/b8AZg/3.xlgTdHPcPmZ3mmW4sJA8m/Tdumx328C', 'zlcg6bp2oOWtzdeTDIkBjYUZreH59chNKKXbns8UaqfmQ8mVc5oh7OtWLtYy', '2017-12-27 09:24:00', '2018-01-06 19:09:28', 'Munung Jatikalen Nganjuk', '085736976475');
 
 --
 -- Indexes for dumped tables
@@ -796,6 +889,12 @@ ALTER TABLE `categories`
   ADD KEY `categories_parent_id_foreign` (`parent_id`);
 
 --
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `data_rows`
 --
 ALTER TABLE `data_rows`
@@ -809,6 +908,12 @@ ALTER TABLE `data_types`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `data_types_name_unique` (`name`),
   ADD UNIQUE KEY `data_types_slug_unique` (`slug`);
+
+--
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `items`
@@ -903,8 +1008,6 @@ ALTER TABLE `settings`
 --
 ALTER TABLE `transactions`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `transactions_id_user_index` (`id_user`),
-  ADD KEY `transactions_id_keranjang_index` (`id_keranjang`),
   ADD KEY `id_user` (`id_user`);
 
 --
@@ -919,8 +1022,7 @@ ALTER TABLE `translations`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`),
-  ADD KEY `users_id_transaksi_index` (`id_transaksi`);
+  ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -930,27 +1032,37 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `baskets`
 --
 ALTER TABLE `baskets`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 --
 -- AUTO_INCREMENT for table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `menus`
 --
@@ -960,7 +1072,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
@@ -975,7 +1087,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 --
 -- AUTO_INCREMENT for table `permission_groups`
 --
@@ -1005,7 +1117,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `translations`
 --
