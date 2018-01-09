@@ -28,7 +28,6 @@ class AppServiceProvider extends ServiceProvider
         $total = Basket::where('id_user',1)->sum('total');
         $count = Basket::where('id_user',1)->count();
 
-
         //menu
         $rooms = array(
           1=>Room::find(1),
@@ -49,6 +48,7 @@ class AppServiceProvider extends ServiceProvider
           'count'=>$count,
           'categories'=>$categories
         );
+        
         return View::share('data', $data);
     }
 
@@ -61,4 +61,6 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
+
+
 }

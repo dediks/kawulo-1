@@ -33,9 +33,18 @@ class CartController extends Controller
       return redirect()->back();
     }
 
-    public function clear()
+    public function kurang(Request $request)
     {
 
+       DB::table('baskets')
+           ->where('id_barang', $request->id)
+           ->delete();
+
+      return response()->json(response);
+    }
+
+    public function clear()
+    {
       $items = DB::table('items')
                    ->join('baskets', 'items.id', 'baskets.id_barang')
                    ->join('users', 'users.id', 'baskets.id_user')

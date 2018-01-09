@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
 	<?php $__env->startSection('title', 'Home'); ?>
-	<?php echo $__env->make('layouts.link', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-</head>
-<body>
+
 	<?php $__env->startSection('grow', ''); ?>
 	<?php $__env->startSection('content'); ?>
 	<div class="banner">
@@ -119,7 +114,7 @@
 			<div class="col-md-3 grid-top simpleCart_shelfItem">
 				<a href="/home/single/<?php echo e($item->id); ?>" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<?php echo e(url('storage/'.$item->gambar)); ?>" alt="">
 					<div class="b-wrapper">
-						<h3 class="b-animate b-from-left    b-delay03 ">
+						<h3 class="b-animate b-from-left b-delay03 ">
 							<span><?php echo e($item->nama_barang); ?></span>
 						</h3>
 					</div>
@@ -173,7 +168,5 @@
 </div>
 <?php $__env->stopSection(); ?>
 <!--//content-->
-</body>
-</html>
 
 <?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
