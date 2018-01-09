@@ -35,12 +35,16 @@ class CartController extends Controller
 
     public function kurang(Request $request)
     {
-
        DB::table('baskets')
            ->where('id_barang', $request->id)
            ->delete();
 
-      return response()->json(response);
+      $basket = DB::table('baskets')->get();
+      $jumlahBasket = $basket->count();
+      $totalBasket = DB::table('baskets')->sum('total');
+
+      return response()->json(['semuaData' => $basket, 'jumlahBasket' => $jumlahBasket, 'totalBasket' => $totalBasket, 'ongkir'=>0.07*$totalBasket,
+      'diskon'=>0.09*$totalBasket, 'totalBayar'=>($totalBasket-(0.09*$totalBasket)+(0.07*$totalBasket))]);
     }
 
     public function clear()

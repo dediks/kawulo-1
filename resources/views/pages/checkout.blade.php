@@ -1,4 +1,6 @@
-@extends('layouts.master')
+@if(!Request::post())
+	@extends('layouts.master')
+@endif
 
 	@section('title', 'Nota')
 
@@ -10,7 +12,7 @@
 	@section('content')
 		<div class="container" id="dataSection">
 			<div class="check">
-				<h1>Keranjang (<span id="jumlahKeranjang">{{$data['count']}}</span>)</h1>
+				<h1>Keranjang (<span id="jumlahKeranjang" >{{$data['count']}}</span>)</h1>
 				<div class="col-md-9 cart-items">
 					@foreach ($items as $key => $item)
 						<div class="cart-header ourItem" id="beli{{$key}}">
@@ -43,16 +45,16 @@
 					<div class="price-details">
 						<h3>Detail Biaya</h3>
 						<span>Total</span>
-						<span class="total1">Rp. {{ number_format($data['total']) }}</span>
+						<span class="total1" id="total">Rp. {{ number_format($data['total']) }}</span>
 						<span>Diskon</span>
-						<span class="total1">Rp. {{ number_format($data['diskon']) }}</span>
+						<span class="total1" id="diskon">Rp. {{ number_format($data['diskon']) }}</span>
 						<span>Biaya Pengiriman</span>
-						<span class="total1">Rp. {{ number_format($data['ongkir']) }}</span>
+						<span class="total1" id="ongkir">Rp. {{ number_format($data['ongkir']) }}</span>
 						<div class="clearfix"></div>
 					</div>
 					<ul class="total_price">
 						<li class="last_price"> <h4>TOTAL</h4></li>
-						<li class="last_price"><span>Rp. {{ number_format($data['total']+$data['ongkir']-$data['diskon']) }}</span></li>
+						<li class="last_price"><span class="totalKeranjang"> Rp. {{ number_format($data['total']+$data['ongkir']-$data['diskon']) }}</span></li>
 						<div class="clearfix"> </div>
 					</ul>
 					<div class="clearfix"></div>
@@ -62,27 +64,37 @@
 		</div>
 	</div>
 
+
 {{ csrf_field() }}
-<script>
-$(document).ready(function(){
-	$('.ourItem').click(function(event) {
-  	var idTombol = event.target.id;
-		var idParent = $('#'+idTombol).parent().attr('id');
-		var idData = $('#'+idParent).find('input').val();
-
-		$('#'+idParent).fadeOut('slow',function(){
-			$('#'+idParent).remove();
-
-			$.post(
-				'/home/checkout',
-				{'id' : idData,  '_token': $('meta[name="csrf-token"]').attr('content')},
-				function(data){
-					if(data.status=='success'){
-						window.location.replace(data.url);
-					}
-			})
-		})
+<script type="text/javascript">
+	$.ajaxSetup({
+	  headers: {
+	    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	  }
 	});
-});
+	$(document).ready(function(){
+		$('.ourItem').click(function(event) {
+			event.preventDefault();
+	  	var idTombol = event.target.id;
+			var idParent = $('#'+idTombol).parent().attr('id');
+			var idData = $('#'+idParent).find('input').val();
+
+			$('#'+idParent).fadeOut('slow',function(){
+				$('#'+idParent).remove();
+
+				$.post(
+					'/home/checkout',
+					{'id' : idData,  '_token': $('meta[name="csrf-token"]').attr('content')},
+					function(data){
+						$('#dataSection').load(data);
+						$('#jumlahKeranjang').html(data['jumlahBasket']);
+						$('.totalKeranjang').html('Rp. ' + Intl.NumberFormat().format(data['totalBayar']));
+						$('#ongkir').html('Rp. ' + Intl.NumberFormat().format(data['ongkir']));
+						$('#diskon').html('Rp. ' + Intl.NumberFormat().format(data['diskon']));
+						$('#total').html('Rp. ' + Intl.NumberFormat().format(data['totalBasket']));
+				})
+			})
+		});
+	});
 </script>
 @stop

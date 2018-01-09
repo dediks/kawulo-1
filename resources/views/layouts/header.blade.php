@@ -33,7 +33,7 @@
 						<div class="cart box_1">
 							<a href="/home/checkout">
 								<h3> <div class="total">
-									<span>Rp. {{number_format($data['total'])}}</span> </div>
+									<span class="totalKeranjang">Rp. {{number_format($data['total'])}}</span> </div>
 									<img src="{{url('/images/cart.png')}}" alt=""/></h3>
 								</a>
 								<p><a href="/home/cart/clear" class="simpleCart_empty">Kosongkan Keranjang</a></p>
