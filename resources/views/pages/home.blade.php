@@ -34,23 +34,16 @@
 						<div class="banner-text">
 							<h3>There are many  </h3>
 						<p>Popular belief Contrary to , Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
-
-
 						</div>
-
 				</li>
 				<li>
 						<div class="banner-text">
 							<h3>Sed ut perspiciatis</h3>
 						<p>Lorem Ipsum is not simply random text. Contrary to popular belief, It has roots in a piece of classical Latin literature from 45 BC.</p>
-
-
 						</div>
-
 				</li>
 			</ul>
 		</div>
-
 	</div>
 </div>
 <div class="container">
@@ -66,13 +59,10 @@
 							</h3>
 						</div>
 					</a>
-
-
 				</div>
 				<div class="col-md-6">
-
-					<div class="col-md1 ">
 						<a href="/home/single" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{url('images/t2.jpg')}}" alt="">
+							<div class="col-md1 ">
 							<div class="b-wrapper">
 								<h3 class="b-animate b-from-top top-in1   b-delay03 ">
 									<span>CLARISSA</span>
@@ -193,6 +183,9 @@
 </div> --> --}}
 <div class="clearfix"> </div>
 </div>
+</div>
+<div class="row text-center">
+	{{ $items->links()}}
 </div>
 </div>
 </div>

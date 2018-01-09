@@ -485,7 +485,7 @@ height: 35px;
     min-height: 66em;
 }
 .content {
-    position: absolute;
+    position: static;
     top: -62px;
     background-color: #fff;
     padding: 2em;
