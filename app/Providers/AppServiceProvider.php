@@ -25,9 +25,8 @@ class AppServiceProvider extends ServiceProvider
 
         //keranjang
         $user = User::find(1);
-        $total = Basket::where('id_user',1)->sum('total');
-        $count = Basket::where('id_user',1)->count();
-
+        $total = Basket::where('id_user',$user->id)->sum('total');
+        $count = Basket::where('id_user',$user->id)->count();
 
         //menu
         $rooms = array(
