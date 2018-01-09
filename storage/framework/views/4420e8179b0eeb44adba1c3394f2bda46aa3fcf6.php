@@ -28,25 +28,25 @@
 						<?php echo csrf_field(); ?>
 
 						<div class="form-group<?php echo e($errors->has('nama') ? ' has-error' : ''); ?>">
-								<input type="text"  id="nama" name="nama" placeholder="Nama" value="<?php echo e($data['user']->name); ?>">
+								<input type="text"  id="nama" name="nama" placeholder="Nama" value="<?php echo e($user->name); ?>">
 								<?php if($errors->has('nama')): ?>
 										<span class="help-block"><?php echo e($errors->first('nama')); ?></span>
 								<?php endif; ?>
 						</div>
 						<div class="form-group<?php echo e($errors->has('email') ? ' has-error' : ''); ?>">
-								<input type="text" id="email" name="email" placeholder="Email" value="<?php echo e($data['user']->email); ?>">
+								<input type="text" id="email" name="email" placeholder="Email" value="<?php echo e($user->email); ?>">
 								<?php if($errors->has('email')): ?>
 										<span class="help-block"><?php echo e($errors->first('email')); ?></span>
 								<?php endif; ?>
 						</div>
 						<div class="form-group<?php echo e($errors->has('telp') ? ' has-error' : ''); ?>">
-								<input type="text" id="telp" name="telp" placeholder="Nomor Telepon" value="<?php echo e($data['user']->telp); ?>">
+								<input type="text" id="telp" name="telp" placeholder="Nomor Telepon" value="<?php echo e($user->telp); ?>">
 								<?php if($errors->has('telp')): ?>
 										<span class="help-block"><?php echo e($errors->first('telp')); ?></span>
 								<?php endif; ?>
 						</div>
 						<div class="form-group<?php echo e($errors->has('alamat') ? ' has-error' : ''); ?>">
-								<textarea id="alamat" name="alamat" placeholder="Alamat Pengiriman"><?php echo e($data['user']->alamat); ?></textarea>
+								<textarea id="alamat" name="alamat" placeholder="Alamat Pengiriman"><?php echo e($user->alamat); ?></textarea>
 								<?php if($errors->has('alamat')): ?>
 										<span class="help-block"><?php echo e($errors->first('alamat')); ?></span>
 								<?php endif; ?>

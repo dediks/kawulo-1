@@ -179,7 +179,11 @@
 							</div>
 						</li>
 						<li><a class="color6" href="/home/contact">PESAN</a></li>
-						<li><a class="color4" href="/home/login">MASUK</a></li>
+						@if(Auth::user())
+							<li><a class="color4" href="/home/login">MASUK</a></li>
+						@else
+							<li><a class="color4" href="/home/login">KELUAR</a></li>
+						@endif
 					</ul>
 				</div>
 

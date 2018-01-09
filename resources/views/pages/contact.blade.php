@@ -31,13 +31,13 @@
 
                 {!! csrf_field() !!}
                 <div class="form-group{{ $errors->has('nama') ? ' has-error' : '' }}">
-                    <input type="text"  id="nama" name="nama" placeholder="Nama" value="{{ $data['user']->name }}">
+                    <input type="text"  id="nama" name="nama" placeholder="Nama" value="{{ $user->name }}">
                     @if($errors->has('nama'))
                         <span class="help-block">{{ $errors->first('nama') }}</span>
                     @endif
                 </div>
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <input type="text" id="email" name="email" placeholder="Email" value="{{ $data['user']->email }}">
+                    <input type="text" id="email" name="email" placeholder="Email" value="{{ $user->email }}">
                     @if($errors->has('email'))
                         <span class="help-block">{{ $errors->first('email') }}</span>
                     @endif

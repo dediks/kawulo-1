@@ -29,25 +29,25 @@
 
 						{!! csrf_field() !!}
 						<div class="form-group{{ $errors->has('nama') ? ' has-error' : '' }}">
-								<input type="text"  id="nama" name="nama" placeholder="Nama" value="{{ $data['user']->name }}">
+								<input type="text"  id="nama" name="nama" placeholder="Nama" value="{{ $user->name }}">
 								@if($errors->has('nama'))
 										<span class="help-block">{{ $errors->first('nama') }}</span>
 								@endif
 						</div>
 						<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-								<input type="text" id="email" name="email" placeholder="Email" value="{{ $data['user']->email }}">
+								<input type="text" id="email" name="email" placeholder="Email" value="{{ $user->email }}">
 								@if($errors->has('email'))
 										<span class="help-block">{{ $errors->first('email') }}</span>
 								@endif
 						</div>
 						<div class="form-group{{ $errors->has('telp') ? ' has-error' : '' }}">
-								<input type="text" id="telp" name="telp" placeholder="Nomor Telepon" value="{{ $data['user']->telp }}">
+								<input type="text" id="telp" name="telp" placeholder="Nomor Telepon" value="{{ $user->telp }}">
 								@if($errors->has('telp'))
 										<span class="help-block">{{ $errors->first('telp') }}</span>
 								@endif
 						</div>
 						<div class="form-group{{ $errors->has('alamat') ? ' has-error' : '' }}">
-								<textarea id="alamat" name="alamat" placeholder="Alamat Pengiriman">{{ $data['user']->alamat }}</textarea>
+								<textarea id="alamat" name="alamat" placeholder="Alamat Pengiriman">{{ $user->alamat }}</textarea>
 								@if($errors->has('alamat'))
 										<span class="help-block">{{ $errors->first('alamat') }}</span>
 								@endif
