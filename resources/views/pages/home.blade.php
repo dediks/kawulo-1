@@ -1,12 +1,7 @@
 @extends('layouts.master')
 
-<!DOCTYPE html>
-<html>
-<head>
 	@section('title', 'Home')
-	@include('layouts.link')
-</head>
-<body>
+
 	@section('grow', '')
 	@section('content')
 	<div class="banner">
@@ -129,7 +124,7 @@
 			<div class="col-md-3 grid-top simpleCart_shelfItem">
 				<a href="/home/single/{{$item->id}}" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{url('storage/'.$item->gambar)}}" alt="">
 					<div class="b-wrapper">
-						<h3 class="b-animate b-from-left    b-delay03 ">
+						<h3 class="b-animate b-from-left b-delay03 ">
 							<span>{{$item->nama_barang}}</span>
 						</h3>
 					</div>
@@ -204,5 +199,3 @@
 </div>
 @stop
 <!--//content-->
-</body>
-</html>

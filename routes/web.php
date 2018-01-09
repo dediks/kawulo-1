@@ -30,6 +30,7 @@ Route::get('/home/contact', 'Pages\ContactController@index');
 
 /*Checkout*/
 Route::get('/home/checkout', 'Pages\CheckoutController@index');
+Route::post('/home/checkout', 'Records\CartController@kurang');
 
 /*Single Product*/
 Route::get('/home/single/{id}', 'Pages\SingleController@show')->name('single');
@@ -48,6 +49,7 @@ Route::get('/home/products/{room}/{category}', 'Pages\ProductsController@show');
 /*Cart*/
 Route::get('/home/cart/add/{id}', 'Records\CartController@show');
 Route::get('/home/cart/clear', 'Records\CartController@clear');
+
 
 Route::post('/send', 'Pages\ContactController@add');
 Route::post('/pay', 'Pages\PaymentController@pay');

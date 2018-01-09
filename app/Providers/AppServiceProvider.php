@@ -48,6 +48,7 @@ class AppServiceProvider extends ServiceProvider
           'count'=>$count,
           'categories'=>$categories
         );
+
         return View::share('data', $data);
     }
 
@@ -60,4 +61,6 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
+
+
 }
