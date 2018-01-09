@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Pages;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Contact;
+use App\User;
 
 class ContactController extends Controller
 {
     public function index()
     {
-    	return view('pages/contact');
+      $user = User::find(1);
+    	return view('pages/contact',['user'=>$user]);
     }
 
     public function add(Request $request)

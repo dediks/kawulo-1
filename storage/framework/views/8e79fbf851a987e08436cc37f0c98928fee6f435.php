@@ -111,7 +111,11 @@
 							</div>
 						</li>
 						<li><a class="color6" href="/home/contact">PESAN</a></li>
-						<li><a class="color4" href="/home/login">MASUK</a></li>
+						<?php if(Auth::user()): ?>
+							<li><a class="color4" href="/home/login">MASUK</a></li>
+						<?php else: ?>
+							<li><a class="color4" href="/home/login">KELUAR</a></li>
+						<?php endif; ?>
 					</ul>
 				</div>
 

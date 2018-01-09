@@ -39,8 +39,14 @@ Route::get('/home/single/{id}', 'Pages\SingleController@show')->name('single');
 Route::get('/home/payment', 'Pages\PaymentController@index');
 
 /*Login n Register*/
-Route::get('/home/login', 'Pages\LoginController@index')->name('login');
-Route::get('/home/register', 'Pages\RegisterController@index');
+Route::post('/home/login', 'Auth\LoginController@index')->name('login');
+Route::get('/home/login', function(){
+  return view('pages.login');
+});
+Route::get('/home/register', function(){
+  return view('pages.register');
+});
+Route::post('/home/register', 'Auth\RegisterController@store');
 
 /*Products*/
 Route::get('/home/products', 'Pages\ProductsController@index');

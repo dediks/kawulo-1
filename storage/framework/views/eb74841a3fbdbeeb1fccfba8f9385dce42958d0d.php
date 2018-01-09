@@ -30,13 +30,13 @@
                 <?php echo csrf_field(); ?>
 
                 <div class="form-group<?php echo e($errors->has('nama') ? ' has-error' : ''); ?>">
-                    <input type="text"  id="nama" name="nama" placeholder="Nama" value="<?php echo e($data['user']->name); ?>">
+                    <input type="text"  id="nama" name="nama" placeholder="Nama" value="<?php echo e($user->name); ?>">
                     <?php if($errors->has('nama')): ?>
                         <span class="help-block"><?php echo e($errors->first('nama')); ?></span>
                     <?php endif; ?>
                 </div>
                 <div class="form-group<?php echo e($errors->has('email') ? ' has-error' : ''); ?>">
-                    <input type="text" id="email" name="email" placeholder="Email" value="<?php echo e($data['user']->email); ?>">
+                    <input type="text" id="email" name="email" placeholder="Email" value="<?php echo e($user->email); ?>">
                     <?php if($errors->has('email')): ?>
                         <span class="help-block"><?php echo e($errors->first('email')); ?></span>
                     <?php endif; ?>

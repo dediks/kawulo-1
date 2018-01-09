@@ -835,7 +835,7 @@ ul.social li i:hover{
 	border:none;
 	padding: 0 15px;
 }
-.contact-grid input[type="text"],.contact-grid textarea{
+.contact-grid input[type="text"], .contact-grid textarea, .contact-grid input[type="password"], .contact-grid input[type="email"]{
 	width: 100%;
 	padding: 1em;
 	margin: 0.5em 0;
@@ -843,7 +843,7 @@ ul.social li i:hover{
 	outline:none;
 	  border: 1px solid #A09F9F;
 	  font-size:1em;
-	  color:#A09F9F;
+	  color:#000;
 	-webkit-appearance: none;
 }
 .contact-grid textarea{
@@ -2838,7 +2838,7 @@ a.item_add p.number {
 .contact-grid ,.contact-in{
   padding: 0;
 }
-.contact-grid input[type="text"], .contact-grid textarea {
+.contact-grid input[type="text"], .contact-grid textarea, .contact-grid input[type="password"], .contact-grid input[type="email"]{
   padding: 0.8em;
 }
 .send input[type="submit"] {

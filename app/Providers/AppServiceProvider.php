@@ -42,13 +42,12 @@ class AppServiceProvider extends ServiceProvider
         $data = array(
           'total'=>$total,
           'ongkir'=>0.07*$total,
-          'diskon'=>0.09*$total,
-          'user'=>$user,
+          'diskon'=>0.09*$total,        
           'rooms'=>$rooms,
           'count'=>$count,
           'categories'=>$categories
         );
-        
+
         return View::share('data', $data);
     }
 
