@@ -448,6 +448,7 @@ height: 35px;
   background-position:-91px -98px;
   right: 0;
  }
+
 .banner-text{
  padding:14em 0 1em;
  color:#fff;
@@ -640,6 +641,7 @@ height: 35px;
 }
 .grid-top{
 	position: relative;
+	margin-bottom: 20px;
 }
 /*----*/
 .col-md1 {
@@ -1356,6 +1358,7 @@ color:#8ce78a;
 .bottom-cd.simpleCart_shelfItem {
     padding-right: 5em;
 }
+
 .grow {
     background-color: #8ce78a;
     padding: 1.3em 0;
@@ -2199,6 +2202,7 @@ p.tun {
 .grid-top {
     float: left;
     width: 25%;
+		margin-bottom: 10px;
 }
 .grid-mid {
   float: left;
@@ -2487,7 +2491,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 }
 .grid-top {
   width: 100%;
-    margin-bottom: 1em;
+	margin-bottom: 10px;
 }
 .grid-top p {
   font-size: 1.2em;
